@@ -1,1050 +1,428 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Purrfect Stickers 🐾</title>
+```
+<title>Purrfect — Cute Sticker World</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
 
 <body>
 
-    <!-- Floating background decorations -->
-    <div class="background-decor" aria-hidden="true">
-        <span>✦</span>
-        <span>♡</span>
-        <span>✧</span>
-        <span>🐾</span>
-        <span>✦</span>
-        <span>♡</span>
-    </div>
-
-
-    <!-- NAVIGATION -->
-    <header class="navbar">
-
-        <a href="#home" class="brand">
-            <span class="brand-paw">🐾</span>
-            <span>Purrfect</span>
-        </a>
-
-        <nav class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#stickers">Stickers</a>
-            <a href="#packs">Packs</a>
-            <a href="#favorites">Favorites</a>
-        </nav>
-
-        <button class="search-icon" id="searchOpen" aria-label="Search">
-            🔍
-        </button>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
-            ☰
-        </button>
-
-    </header>
-
-
-    <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
-
-        <button class="mobile-close" id="mobileClose">
-            ✕
-        </button>
-
-        <a href="#home">Home</a>
-        <a href="#stickers">Stickers</a>
-        <a href="#packs">Packs</a>
-        <a href="#favorites">Favorites</a>
-
-    </div>
-
-
-    <main id="home">
-
-        <!-- HERO -->
-        <section class="hero">
-
-            <div class="hero-content">
-
-                <div class="eyebrow">
-                    ✨ A tiny world of cute things
-                </div>
-
-                <h1>
-                    Cute stickers
-                    <span>for every little mood.</span>
-                </h1>
-
-                <p>
-                    Find adorable, funny, dreamy and slightly chaotic
-                    stickers to brighten your day. 🐱💕
-                </p>
-
-                <div class="hero-actions">
-
-                    <a href="#stickers" class="primary-action">
-                        ✨ Explore stickers
-                    </a>
-
-                    <button class="secondary-action" id="surpriseHero">
-                        🎲 Surprise me
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- FLOATING STICKER DISPLAY -->
-            <div class="hero-art" aria-hidden="true">
-
-                <div class="sparkle sparkle-one">✦</div>
-                <div class="sparkle sparkle-two">✧</div>
-                <div class="sparkle sparkle-three">✦</div>
-
-                <div class="floating-sticker sticker-one">
-                    🎀
-                </div>
-
-                <div class="floating-sticker sticker-two">
-                    🐱
-                </div>
-
-                <div class="floating-sticker sticker-three">
-                    🌸
-                </div>
-
-                <div class="floating-sticker sticker-four">
-                    ⭐
-                </div>
-
-                <div class="hero-cat">
-                    🐱
-                </div>
-
-                <div class="mini-heart">♡</div>
-
-            </div>
-
-        </section>
-
-
-        <!-- MOODS -->
-        <section class="moods section-space">
-
-            <div class="section-heading">
-
-                <span>Pick a feeling</span>
-
-                <h2>
-                    What's your mood today?
-                </h2>
-
-            </div>
-
-
-            <div class="mood-list">
-
-                <button class="mood-card active" data-category="all">
-                    <span>✨</span>
-                    <strong>Everything</strong>
-                </button>
-
-                <button class="mood-card" data-category="cute">
-                    <span>🥺</span>
-                    <strong>Softie</strong>
-                </button>
-
-                <button class="mood-card" data-category="funny">
-                    <span>😂</span>
-                    <strong>Chaos</strong>
-                </button>
-
-                <button class="mood-card" data-category="love">
-                    <span>💕</span>
-                    <strong>Love</strong>
-                </button>
-
-                <button class="mood-card" data-category="sleepy">
-                    <span>😴</span>
-                    <strong>Sleepy</strong>
-                </button>
-
-                <button class="mood-card" data-category="food">
-                    <span>🍓</span>
-                    <strong>Yummy</strong>
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- STICKER COLLECTION -->
-        <section class="stickers section-space" id="stickers">
-
-            <div class="collection-top">
-
-                <div class="section-heading">
-
-                    <span>Little pieces of happiness</span>
-
-                    <h2>
-                        A box full of stickers 📦
-                    </h2>
-
-                </div>
-
-                <button class="find-button" id="searchOpenTwo">
-                    🔍 Find a sticker
-                </button>
-
-            </div>
-
-
-            <div class="sticker-grid" id="stickerGrid">
-
-                <!-- JavaScript will add stickers here -->
-
-            </div>
-
-        </section>
-
-
-        <!-- STICKER PACKS -->
-        <section class="packs section-space" id="packs">
-
-            <div class="section-heading centered">
-
-                <span>Collections made with love</span>
-
-                <h2>
-                    Pick a sticker pack 🎁
-                </h2>
-
-            </div>
-
-
-            <div class="pack-grid">
-
-                <button class="pack-card" data-category="cute">
-
-                    <div class="pack-art">
-                        🐱
-                    </div>
-
-                    <div>
-                        <small>Pack 01</small>
-                        <h3>Cat Cuddles</h3>
-                    </div>
-
-                    <span>→</span>
-
-                </button>
-
-
-                <button class="pack-card" data-category="food">
-
-                    <div class="pack-art">
-                        🍓
-                    </div>
-
-                    <div>
-                        <small>Pack 02</small>
-                        <h3>Sweet Treats</h3>
-                    </div>
-
-                    <span>→</span>
-
-                </button>
-
-
-                <button class="pack-card" data-category="love">
-
-                    <div class="pack-art">
-                        🎀
-                    </div>
-
-                    <div>
-                        <small>Pack 03</small>
-                        <h3>Love Notes</h3>
-                    </div>
-
-                    <span>→</span>
-
-                </button>
-
-
-                <button class="pack-card" data-category="funny">
-
-                    <div class="pack-art">
-                        😂
-                    </div>
-
-                    <div>
-                        <small>Pack 04</small>
-                        <h3>Pure Chaos</h3>
-                    </div>
-
-                    <span>→</span>
-
-                </button>
-
-            </div>
-
-        </section>
-
-
-        <!-- RANDOM STICKER -->
-        <section class="surprise-section">
-
-            <div class="surprise-card">
-
-                <div class="surprise-text">
-
-                    <span>Can't choose? 🐾</span>
-
-                    <h2>
-                        Let the cat
-                        <em>choose for you.</em>
-                    </h2>
-
-                    <p>
-                        Give our tiny cat a job.
-                        It will pick a sticker just for you.
-                    </p>
-
-                    <button class="primary-action" id="surpriseButton">
-                        ✨ Pick my sticker
-                    </button>
-
-                </div>
-
-
-                <div class="surprise-cat" id="randomSticker">
-                    🐱
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FAVORITES -->
-        <section class="favorites section-space" id="favorites">
-
-            <div class="section-heading centered">
-
-                <span>Your tiny collection</span>
-
-                <h2>
-                    My favorites ❤️
-                </h2>
-
-            </div>
-
-
-            <div class="favorite-grid" id="favoriteGrid">
-
-                <div class="empty-favorites">
-
-                    <div>🥺</div>
-
-                    <h3>
-                        Nothing here yet
-                    </h3>
-
-                    <p>
-                        Tap the heart on a sticker
-                        to keep it here.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- SEARCH PANEL -->
-    <div class="search-panel" id="searchPanel">
-
-        <div class="search-backdrop" id="searchClose"></div>
-
-        <div class="search-window">
-
-            <button class="search-close" id="searchCloseButton">
-                ✕
-            </button>
-
-            <span>🔍</span>
-
-            <h2>
-                Find your little sticker
-            </h2>
-
-            <p>
-                Search by mood, category or sticker name.
-            </p>
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="Try “cat”, “love”, “food”..."
-                autocomplete="off"
-            >
-
-        </div>
-
-    </div>
-
-
-    <!-- STICKER MODAL -->
-    <div class="sticker-modal" id="stickerModal">
-
-        <div class="modal-backdrop" id="modalClose"></div>
-
-        <div class="modal-window">
-
-            <button class="modal-x" id="modalCloseButton">
-                ✕
-            </button>
-
-            <div class="modal-sticker" id="modalSticker">
-                🐱
-            </div>
-
-            <span id="modalCategory">
-                CUTE
-            </span>
-
-            <h2 id="modalTitle">
-                Cute Cat
-            </h2>
-
-            <p id="modalCaption">
-                A tiny sticker for a tiny mood.
-            </p>
-
-            <div class="modal-actions">
-
-                <button id="modalFavorite">
-                    ♡ Save to favorites
-                </button>
-
-                <button id="modalSave">
-                    ↓ Save
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-        <div class="footer-brand">
-            🐾 Purrfect Stickers
-        </div>
-
-        <p>
-            Tiny stickers, big moods. ✨
-        </p>
-
-        <div class="footer-links">
-            <a href="#home">Home</a>
-            <a href="#stickers">Stickers</a>
-            <a href="#favorites">Favorites</a>
-        </div>
-
-    </footer>
-
-
-    <script src="script.js"></script>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Purrfect Stickers 🐾</title>
-
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<!-- =========================================
-     FLOATING BACKGROUND
-========================================= -->
-
-<div class="background-decor">
-    <span>✦</span>
-    <span>♡</span>
-    <span>✧</span>
-    <span>🐾</span>
-    <span>♡</span>
-    <span>✦</span>
+```
+<!-- Floating decorations -->
+<div class="floating-decor" aria-hidden="true">
+    <span class="sparkle s1">✦</span>
+    <span class="sparkle s2">✧</span>
+    <span class="sparkle s3">✦</span>
+    <span class="dot d1"></span>
+    <span class="dot d2"></span>
+    <span class="dot d3"></span>
 </div>
 
 
-<!-- =========================================
-     NAVBAR
-========================================= -->
-
+<!-- NAVBAR -->
 <header class="navbar">
 
-    <a href="#home" class="brand">
-        <span class="brand-paw">🐾</span>
-        Purrfect Stickers
+    <a href="#home" class="logo">
+        <span class="logo-paw">P</span>
+        Purrfect
     </a>
 
-    <nav class="nav-links">
+    <nav class="desktop-nav">
         <a href="#home">Home</a>
-        <a href="#moods">Moods</a>
-        <a href="#collection">Stickers</a>
+        <a href="#collection">Collection</a>
         <a href="#packs">Packs</a>
-        <a href="#favorites">Favorites ♡</a>
+        <a href="#favorites">Favorites</a>
     </nav>
 
-    <button class="search-icon" id="openSearch" aria-label="Search">
-        🔍
-    </button>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-        ☰
+    <button class="menu-button" id="menuButton" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
     </button>
 
 </header>
 
 
-<!-- =========================================
-     MOBILE MENU
-========================================= -->
-
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
 
     <button class="mobile-close" id="mobileClose">
-        ✕
+        ×
     </button>
 
-    <a href="#home">Home 🏠</a>
-    <a href="#moods">Moods 🌸</a>
-    <a href="#collection">Stickers 🐱</a>
-    <a href="#packs">Packs 🎀</a>
-    <a href="#favorites">Favorites 💕</a>
+    <a href="#home">Home</a>
+    <a href="#collection">Collection</a>
+    <a href="#packs">Packs</a>
+    <a href="#favorites">Favorites</a>
 
 </div>
 
 
-<!-- =========================================
-     HERO
-========================================= -->
-
 <main>
 
-<section class="hero" id="home">
 
-    <div class="hero-content">
+    <!-- HERO -->
+    <section class="hero" id="home">
 
-        <span class="eyebrow">
-            🐾 A tiny world full of cute cats
-        </span>
+        <div class="hero-copy">
 
-        <h1>
-            Find your
-            <span>Purrfect</span>
-            mood.
-        </h1>
+            <p class="eyebrow">
+                A tiny world of cute things
+            </p>
 
-        <p>
-            Welcome to a little corner of the internet
-            where cats are cute, chaotic and ready to
-            brighten your day. 🐱✨
-        </p>
+            <h1>
+                Little stickers
+                <span>with big personality.</span>
+            </h1>
 
-        <div class="hero-actions">
+            <p class="hero-text">
+                Discover a collection of adorable,
+                hand-drawn-style kitty characters
+                for every tiny mood.
+            </p>
 
-            <a href="#collection" class="primary-action">
-                Explore Stickers 🐾
-            </a>
+            <div class="hero-buttons">
 
-            <button class="secondary-action" id="heroSurprise">
-                🎲 Surprise Me
+                <a href="#collection" class="primary-button">
+                    Explore collection
+                </a>
+
+                <button class="ghost-button" id="randomHero">
+                    Surprise me
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO CHARACTER -->
+        <div class="hero-character-area">
+
+            <div class="hero-sparkle hs1">✦</div>
+            <div class="hero-sparkle hs2">✧</div>
+            <div class="hero-sparkle hs3">♡</div>
+
+            <div class="hero-sticker">
+
+                <div class="hero-ear left"></div>
+                <div class="hero-ear right"></div>
+
+                <div class="hero-head">
+
+                    <div class="hero-eye eye-left">
+                        <span></span>
+                    </div>
+
+                    <div class="hero-eye eye-right">
+                        <span></span>
+                    </div>
+
+                    <div class="hero-blush blush-left"></div>
+                    <div class="hero-blush blush-right"></div>
+
+                    <div class="hero-nose"></div>
+
+                    <div class="hero-mouth"></div>
+
+                </div>
+
+                <div class="hero-body">
+                    <div class="hero-paw left"></div>
+                    <div class="hero-paw right"></div>
+                </div>
+
+                <div class="hero-tail"></div>
+
+                <div class="hero-bow">
+                    <i></i>
+                    <i></i>
+                    <b></b>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOODS -->
+    <section class="moods">
+
+        <div class="section-title">
+
+            <p>Choose your little mood</p>
+
+            <h2>
+                What kind of kitty are you?
+            </h2>
+
+        </div>
+
+
+        <div class="mood-row">
+
+            <button class="mood active" data-category="all">
+                <span>All</span>
+            </button>
+
+            <button class="mood" data-category="cute">
+                <span>Softie</span>
+            </button>
+
+            <button class="mood" data-category="happy">
+                <span>Happy</span>
+            </button>
+
+            <button class="mood" data-category="sleepy">
+                <span>Sleepy</span>
+            </button>
+
+            <button class="mood" data-category="love">
+                <span>Love</span>
+            </button>
+
+            <button class="mood" data-category="funny">
+                <span>Silly</span>
             </button>
 
         </div>
 
-    </div>
+    </section>
 
 
-    <!-- HERO CAT ART -->
+    <!-- COLLECTION -->
+    <section class="collection" id="collection">
 
-    <div class="hero-art">
-
-        <div class="floating-sticker sticker-one">
-            🥺
-        </div>
-
-        <div class="floating-sticker sticker-two">
-            😻
-        </div>
-
-        <div class="floating-sticker sticker-three">
-            😴
-        </div>
-
-        <div class="floating-sticker sticker-four">
-            😼
-        </div>
-
-        <div class="hero-cat">
-            🐱
-        </div>
-
-        <div class="sparkle sparkle-one">
-            ✦
-        </div>
-
-        <div class="sparkle sparkle-two">
-            ✧
-        </div>
-
-        <div class="sparkle sparkle-three">
-            ✦
-        </div>
-
-        <div class="mini-heart">
-            ♥
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     MOODS
-========================================= -->
-
-<section class="moods section-space" id="moods">
-
-    <div class="section-heading centered">
-
-        <span>Pick your vibe</span>
-
-        <h2>
-            What's your mood today? 🐾
-        </h2>
-
-    </div>
-
-
-    <div class="mood-list">
-
-        <button class="mood-card active" data-category="all">
-            <span>🐾</span>
-            <strong>Everything</strong>
-        </button>
-
-        <button class="mood-card" data-category="cute">
-            <span>🥺</span>
-            <strong>Cute</strong>
-        </button>
-
-        <button class="mood-card" data-category="funny">
-            <span>😂</span>
-            <strong>Funny</strong>
-        </button>
-
-        <button class="mood-card" data-category="sleepy">
-            <span>😴</span>
-            <strong>Sleepy</strong>
-        </button>
-
-        <button class="mood-card" data-category="love">
-            <span>😻</span>
-            <strong>Love</strong>
-        </button>
-
-        <button class="mood-card" data-category="coding">
-            <span>💻</span>
-            <strong>Coding</strong>
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     STICKER COLLECTION
-========================================= -->
-
-<section class="collection section-space" id="collection">
-
-    <div class="collection-top">
-
-        <div class="section-heading">
-
-            <span>Fresh from the cat factory ✨</span>
-
-            <h2>
-                Little stickers,
-                <br>
-                big personalities.
-            </h2>
-
-        </div>
-
-        <button class="find-button" id="openSearchTwo">
-            🔍 Find a sticker
-        </button>
-
-    </div>
-
-
-    <!-- JAVASCRIPT WILL CREATE STICKERS HERE -->
-
-    <div class="sticker-grid" id="stickerGrid">
-
-        <div class="sticker-card">
-
-            <div class="sticker-visual">
-                <div class="sticker-art">🐱</div>
-            </div>
-
-            <div class="sticker-details">
-
-                <small>Cute</small>
-
-                <h3>
-                    Happy Cat
-                </h3>
-
-                <div class="sticker-bottom">
-
-                    <button class="view-sticker">
-                        View ✨
-                    </button>
-
-                    <button class="card-heart">
-                        ♡
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="sticker-card">
-
-            <div class="sticker-visual">
-                <div class="sticker-art">😻</div>
-            </div>
-
-            <div class="sticker-details">
-
-                <small>Love</small>
-
-                <h3>
-                    Love Cat
-                </h3>
-
-                <div class="sticker-bottom">
-
-                    <button class="view-sticker">
-                        View ✨
-                    </button>
-
-                    <button class="card-heart">
-                        ♡
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="sticker-card">
-
-            <div class="sticker-visual">
-                <div class="sticker-art">😴</div>
-            </div>
-
-            <div class="sticker-details">
-
-                <small>Sleepy</small>
-
-                <h3>
-                    Sleepy Cat
-                </h3>
-
-                <div class="sticker-bottom">
-
-                    <button class="view-sticker">
-                        View ✨
-                    </button>
-
-                    <button class="card-heart">
-                        ♡
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="sticker-card">
-
-            <div class="sticker-visual">
-                <div class="sticker-art">😼</div>
-            </div>
-
-            <div class="sticker-details">
-
-                <small>Meme</small>
-
-                <h3>
-                    Sneaky Cat
-                </h3>
-
-                <div class="sticker-bottom">
-
-                    <button class="view-sticker">
-                        View ✨
-                    </button>
-
-                    <button class="card-heart">
-                        ♡
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     STICKER PACKS
-========================================= -->
-
-<section class="packs section-space" id="packs">
-
-    <div class="section-heading centered">
-
-        <span>Cat collections 🎀</span>
-
-        <h2>
-            Choose a tiny sticker world.
-        </h2>
-
-    </div>
-
-
-    <div class="pack-grid">
-
-        <button class="pack-card" data-category="cute">
-
-            <div class="pack-art">
-                🥺
-            </div>
+        <div class="collection-heading">
 
             <div>
-                <small>Pack 01</small>
-                <h3>Soft & Cute</h3>
+                <p>Made for tiny happy moments</p>
+
+                <h2>
+                    Sticker collection
+                </h2>
             </div>
 
-            <span>→</span>
 
-        </button>
-
-
-        <button class="pack-card" data-category="funny">
-
-            <div class="pack-art">
-                😂
-            </div>
-
-            <div>
-                <small>Pack 02</small>
-                <h3>Chaos Cats</h3>
-            </div>
-
-            <span>→</span>
-
-        </button>
-
-
-        <button class="pack-card" data-category="love">
-
-            <div class="pack-art">
-                💕
-            </div>
-
-            <div>
-                <small>Pack 03</small>
-                <h3>Love & Hugs</h3>
-            </div>
-
-            <span>→</span>
-
-        </button>
-
-
-        <button class="pack-card" data-category="coding">
-
-            <div class="pack-art">
-                💻
-            </div>
-
-            <div>
-                <small>Pack 04</small>
-                <h3>Coder Cats</h3>
-            </div>
-
-            <span>→</span>
-
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     SURPRISE CAT
-========================================= -->
-
-<section class="surprise-section">
-
-    <div class="surprise-card">
-
-        <div class="surprise-text">
-
-            <span>Feeling indecisive? 🐱</span>
-
-            <h2>
-                Let a cat
-                <em>choose for you.</em>
-            </h2>
-
-            <p>
-                Close your eyes, press the button
-                and let the mysterious cat universe
-                decide your next sticker.
-            </p>
-
-            <button class="primary-action" id="randomBtn">
-                🎲 Pick My Cat
+            <button class="search-button" id="openSearch">
+                Find a sticker
             </button>
 
         </div>
 
 
-        <div class="surprise-cat" id="randomResult">
-            🐱
+        <div class="sticker-grid" id="stickerGrid">
+            <!-- JavaScript creates stickers here -->
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================================
-     FAVORITES
-========================================= -->
+    <!-- PACKS -->
+    <section class="packs" id="packs">
 
-<section class="favorites section-space" id="favorites">
+        <div class="section-title center">
 
-    <div class="section-heading centered">
+            <p>Little collections</p>
 
-        <span>Your little collection ❤️</span>
+            <h2>
+                Pick your favorite pack
+            </h2>
 
-        <h2>
-            Favorite Cats
-        </h2>
-
-    </div>
+        </div>
 
 
-    <div class="favorite-grid" id="favoriteGrid">
+        <div class="pack-grid">
 
-        <div class="empty-favorites">
+            <button class="pack-card" data-category="cute">
 
-            <div>
-                🥺
+                <div class="mini-character pink-cat">
+                    <span class="mini-ear left"></span>
+                    <span class="mini-ear right"></span>
+                    <span class="mini-face"></span>
+                </div>
+
+                <div class="pack-info">
+                    <small>01</small>
+                    <h3>Soft Kitties</h3>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <button class="pack-card" data-category="love">
+
+                <div class="mini-character love-cat">
+                    <span class="mini-ear left"></span>
+                    <span class="mini-ear right"></span>
+                    <span class="mini-face"></span>
+                </div>
+
+                <div class="pack-info">
+                    <small>02</small>
+                    <h3>Love Club</h3>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <button class="pack-card" data-category="sleepy">
+
+                <div class="mini-character sleepy-cat">
+                    <span class="mini-ear left"></span>
+                    <span class="mini-ear right"></span>
+                    <span class="mini-face"></span>
+                </div>
+
+                <div class="pack-info">
+                    <small>03</small>
+                    <h3>Sleepy Paws</h3>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+
+            <button class="pack-card" data-category="funny">
+
+                <div class="mini-character silly-cat">
+                    <span class="mini-ear left"></span>
+                    <span class="mini-ear right"></span>
+                    <span class="mini-face"></span>
+                </div>
+
+                <div class="pack-info">
+                    <small>04</small>
+                    <h3>Silly Club</h3>
+                </div>
+
+                <span class="arrow">→</span>
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- RANDOM -->
+    <section class="random-section">
+
+        <div class="random-content">
+
+            <p>Can't decide?</p>
+
+            <h2>
+                Let a kitty
+                <span>choose for you.</span>
+            </h2>
+
+            <button class="primary-button" id="randomButton">
+                Pick my sticker
+            </button>
+
+        </div>
+
+
+        <div class="random-display" id="randomDisplay">
+
+            <div class="tiny-cat">
+                <div class="tiny-ear left"></div>
+                <div class="tiny-ear right"></div>
+
+                <div class="tiny-head">
+                    <span class="tiny-eye left"></span>
+                    <span class="tiny-eye right"></span>
+                    <span class="tiny-blush left"></span>
+                    <span class="tiny-blush right"></span>
+                </div>
+
+                <div class="tiny-body"></div>
             </div>
 
-            <h3>
-                Your favorite corner is empty.
-            </h3>
+        </div>
 
-            <p>
-                Tap the ♡ on any sticker to keep it here.
-            </p>
+    </section>
+
+
+    <!-- FAVORITES -->
+    <section class="favorites" id="favorites">
+
+        <div class="section-title center">
+
+            <p>Your personal collection</p>
+
+            <h2>
+                Favorite stickers
+            </h2>
 
         </div>
 
-    </div>
 
-</section>
+        <div class="favorite-grid" id="favoriteGrid">
+
+            <div class="favorite-empty">
+
+                <div class="empty-cat">
+                    <span></span>
+                </div>
+
+                <h3>
+                    Your little shelf is empty
+                </h3>
+
+                <p>
+                    Tap the heart on any sticker
+                    to keep it here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<!-- =========================================
-     SEARCH POPUP
-========================================= -->
+<!-- SEARCH MODAL -->
+<div class="search-modal" id="searchModal">
 
-<div class="search-panel" id="searchPanel">
+    <div class="search-overlay" id="searchOverlay"></div>
 
-    <div class="search-backdrop" id="searchBackdrop"></div>
+    <div class="search-box">
 
-    <div class="search-window">
-
-        <button class="search-close" id="searchClose">
-            ✕
+        <button class="close-button" id="closeSearch">
+            ×
         </button>
 
-        <span>🔎</span>
+        <p>Find something cute</p>
 
         <h2>
-            Find your cat.
+            Search stickers
         </h2>
 
-        <p>
-            Search by mood, category or sticker name.
-        </p>
-
         <input
-            type="text"
+            type="search"
             id="searchInput"
-            placeholder="Try cute, sleepy, love..."
+            placeholder="Type a mood or sticker name..."
+            autocomplete="off"
         >
 
     </div>
@@ -1052,44 +430,35 @@
 </div>
 
 
-<!-- =========================================
-     STICKER MODAL
-========================================= -->
+<!-- STICKER PREVIEW -->
+<div class="preview-modal" id="previewModal">
 
-<div class="sticker-modal" id="stickerModal">
+    <div class="preview-overlay" id="previewOverlay"></div>
 
-    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="preview-box">
 
-    <div class="modal-window">
-
-        <button class="modal-x" id="modalClose">
-            ✕
+        <button class="close-button" id="closePreview">
+            ×
         </button>
 
-        <div class="modal-sticker" id="modalSticker">
-            🐱
-        </div>
+        <div id="previewSticker"></div>
 
-        <span id="modalCategory">
+        <p id="previewCategory">
             CUTE
-        </span>
-
-        <h2 id="modalTitle">
-            Happy Cat
-        </h2>
-
-        <p id="modalCaption">
-            A tiny cat with a big personality. 🐾
         </p>
 
-        <div class="modal-actions">
+        <h2 id="previewTitle">
+            Little Kitty
+        </h2>
 
-            <button id="modalFavorite">
-                ❤️ Favorite
+        <div class="preview-actions">
+
+            <button id="previewFavorite">
+                ♡ Add to favorites
             </button>
 
-            <button id="modalSave">
-                ✨ Save Sticker
+            <button id="previewSave">
+                Save sticker
             </button>
 
         </div>
@@ -1099,60 +468,31 @@
 </div>
 
 
-<!-- =========================================
-     FOOTER
-========================================= -->
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
-<footer class="footer">
 
-    <div class="footer-brand">
-        🐾 Purrfect Stickers
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-logo">
+        Purrfect
     </div>
 
     <p>
-        A tiny internet home for cat lovers. 💕
+        A tiny sticker world made with code.
     </p>
 
-    <div class="footer-links">
-        <a href="#home">Home</a>
-        <a href="#collection">Stickers</a>
-        <a href="#favorites">Favorites</a>
-    </div>
+    <span>
+        Made with lots of tiny paws.
+    </span>
 
 </footer>
 
 
 <script src="script.js"></script>
+```
 
 </body>
-</html>
-        Made with tiny paws, big dreams & lots of love. 💕
-    </p>
 
-    <div class="footer-links">
-
-        <a href="#home">
-            Home
-        </a>
-
-        <a href="#stickers">
-            Stickers
-        </a>
-
-        <a href="#favorites">
-            Favorites
-        </a>
-
-    </div>
-
-    <p class="footer-note">
-        © 2026 Purrfect Stickers 🐾
-    </p>
-
-</footer>
-
-
-<script src="script.js"></script>
-
-</body>
 </html>
