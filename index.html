@@ -1,498 +1,491 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>Purrfect — Cute Sticker World</title>
+    <title>Little Paws Sticker Garden</title>
 
-<link rel="stylesheet" href="style.css">
-```
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-```
-<!-- Floating decorations -->
-<div class="floating-decor" aria-hidden="true">
-    <span class="sparkle s1">✦</span>
-    <span class="sparkle s2">✧</span>
-    <span class="sparkle s3">✦</span>
-    <span class="dot d1"></span>
-    <span class="dot d2"></span>
-    <span class="dot d3"></span>
-</div>
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <div class="logo">
+            Little Paws
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#stickers">Stickers</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
 
 
-<!-- NAVBAR -->
-<header class="navbar">
+    <!-- Hero Section -->
+    <main>
 
-    <a href="#home" class="logo">
-        <span class="logo-paw">P</span>
-        Purrfect
-    </a>
+        <section class="hero" id="home">
 
-    <nav class="desktop-nav">
-        <a href="#home">Home</a>
-        <a href="#collection">Collection</a>
-        <a href="#packs">Packs</a>
-        <a href="#favorites">Favorites</a>
-    </nav>
+            <div class="hero-text">
 
-    <button class="menu-button" id="menuButton" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+                <p class="small-title">
+                    a tiny world of cute things
+                </p>
 
-</header>
+                <h1>
+                    Welcome to my
+                    <span>Little Paws</span>
+                    ♡
+                </h1>
 
+                <p class="hero-description">
+                    A cozy little sticker garden filled with
+                    cute cats, tiny flowers, dreamy bows
+                    and happy little moments.
+                </p>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-
-    <button class="mobile-close" id="mobileClose">
-        ×
-    </button>
-
-    <a href="#home">Home</a>
-    <a href="#collection">Collection</a>
-    <a href="#packs">Packs</a>
-    <a href="#favorites">Favorites</a>
-
-</div>
-
-
-<main>
-
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-
-        <div class="hero-copy">
-
-            <p class="eyebrow">
-                A tiny world of cute things
-            </p>
-
-            <h1>
-                Little stickers
-                <span>with big personality.</span>
-            </h1>
-
-            <p class="hero-text">
-                Discover a collection of adorable,
-                hand-drawn-style kitty characters
-                for every tiny mood.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#collection" class="primary-button">
-                    Explore collection
+                <a href="#stickers" class="cute-button">
+                    Explore Stickers
                 </a>
 
-                <button class="ghost-button" id="randomHero">
-                    Surprise me
-                </button>
-
             </div>
 
-        </div>
 
-
-        <!-- HERO CHARACTER -->
-        <div class="hero-character-area">
-
-            <div class="hero-sparkle hs1">✦</div>
-            <div class="hero-sparkle hs2">✧</div>
-            <div class="hero-sparkle hs3">♡</div>
-
+            <!-- Main illustrated sticker -->
             <div class="hero-sticker">
 
-                <div class="hero-ear left"></div>
-                <div class="hero-ear right"></div>
+                <div class="sticker-paper">
 
-                <div class="hero-head">
+                    <svg
+                        class="cat-drawing"
+                        viewBox="0 0 300 300"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
 
-                    <div class="hero-eye eye-left">
-                        <span></span>
-                    </div>
+                        <!-- ears -->
+                        <path
+                            d="M85 105 L72 45 L125 78"
+                            fill="#f6c9b8"
+                            stroke="#4b3a3a"
+                            stroke-width="7"
+                            stroke-linejoin="round"
+                        />
 
-                    <div class="hero-eye eye-right">
-                        <span></span>
-                    </div>
+                        <path
+                            d="M215 105 L228 45 L175 78"
+                            fill="#f6c9b8"
+                            stroke="#4b3a3a"
+                            stroke-width="7"
+                            stroke-linejoin="round"
+                        />
 
-                    <div class="hero-blush blush-left"></div>
-                    <div class="hero-blush blush-right"></div>
+                        <!-- head -->
+                        <ellipse
+                            cx="150"
+                            cy="150"
+                            rx="92"
+                            ry="82"
+                            fill="#f8d7c8"
+                            stroke="#4b3a3a"
+                            stroke-width="7"
+                        />
 
-                    <div class="hero-nose"></div>
+                        <!-- eyes -->
+                        <circle
+                            cx="115"
+                            cy="145"
+                            r="7"
+                            fill="#4b3a3a"
+                        />
 
-                    <div class="hero-mouth"></div>
+                        <circle
+                            cx="185"
+                            cy="145"
+                            r="7"
+                            fill="#4b3a3a"
+                        />
 
-                </div>
+                        <!-- cheeks -->
+                        <ellipse
+                            cx="102"
+                            cy="170"
+                            rx="15"
+                            ry="8"
+                            fill="#f2a9a9"
+                            opacity="0.7"
+                        />
 
-                <div class="hero-body">
-                    <div class="hero-paw left"></div>
-                    <div class="hero-paw right"></div>
-                </div>
+                        <ellipse
+                            cx="198"
+                            cy="170"
+                            rx="15"
+                            ry="8"
+                            fill="#f2a9a9"
+                            opacity="0.7"
+                        />
 
-                <div class="hero-tail"></div>
+                        <!-- nose -->
+                        <path
+                            d="M145 160 Q150 165 155 160"
+                            fill="#e99a9a"
+                            stroke="#4b3a3a"
+                            stroke-width="4"
+                        />
 
-                <div class="hero-bow">
-                    <i></i>
-                    <i></i>
-                    <b></b>
+                        <!-- mouth -->
+                        <path
+                            d="M150 164 Q142 178 134 170
+                               M150 164 Q158 178 166 170"
+                            fill="none"
+                            stroke="#4b3a3a"
+                            stroke-width="4"
+                            stroke-linecap="round"
+                        />
+
+                        <!-- bow -->
+                        <path
+                            d="M215 90
+                               Q250 65 257 92
+                               Q250 115 215 102
+                               Z"
+                            fill="#e99aaa"
+                            stroke="#4b3a3a"
+                            stroke-width="5"
+                        />
+
+                        <path
+                            d="M215 90
+                               Q180 65 173 92
+                               Q180 115 215 102
+                               Z"
+                            fill="#e99aaa"
+                            stroke="#4b3a3a"
+                            stroke-width="5"
+                        />
+
+                        <circle
+                            cx="215"
+                            cy="96"
+                            r="10"
+                            fill="#f6b7c1"
+                            stroke="#4b3a3a"
+                            stroke-width="4"
+                        />
+
+                    </svg>
+
                 </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
-    <!-- MOODS -->
-    <section class="moods">
+        <!-- Sticker Section -->
+        <section class="stickers-section" id="stickers">
 
-        <div class="section-title">
-
-            <p>Choose your little mood</p>
+            <p class="small-title">
+                little collection
+            </p>
 
             <h2>
-                What kind of kitty are you?
+                Cute little stickers
             </h2>
 
-        </div>
+            <p class="section-description">
+                Tiny illustrations made with code ♡
+            </p>
 
 
-        <div class="mood-row">
+            <div class="sticker-grid">
 
-            <button class="mood active" data-category="all">
-                <span>All</span>
-            </button>
+                <!-- Sticker 1 -->
+                <article class="sticker-card pink">
 
-            <button class="mood" data-category="cute">
-                <span>Softie</span>
-            </button>
+                    <div class="sticker-art">
 
-            <button class="mood" data-category="happy">
-                <span>Happy</span>
-            </button>
+                        <svg viewBox="0 0 220 220">
 
-            <button class="mood" data-category="sleepy">
-                <span>Sleepy</span>
-            </button>
+                            <circle
+                                cx="110"
+                                cy="115"
+                                r="65"
+                                fill="#f6c9b8"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
 
-            <button class="mood" data-category="love">
-                <span>Love</span>
-            </button>
+                            <path
+                                d="M65 75 L58 35 L92 62"
+                                fill="#f6c9b8"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
 
-            <button class="mood" data-category="funny">
-                <span>Silly</span>
-            </button>
+                            <path
+                                d="M155 75 L162 35 L128 62"
+                                fill="#f6c9b8"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
 
-        </div>
+                            <circle
+                                cx="88"
+                                cy="115"
+                                r="6"
+                                fill="#4b3a3a"
+                            />
 
-    </section>
+                            <circle
+                                cx="132"
+                                cy="115"
+                                r="6"
+                                fill="#4b3a3a"
+                            />
+
+                            <path
+                                d="M105 132 Q110 137 115 132"
+                                fill="none"
+                                stroke="#4b3a3a"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Sleepy Kitty</h3>
+
+                    <p>tiny sleepy friend</p>
+
+                </article>
 
 
-    <!-- COLLECTION -->
-    <section class="collection" id="collection">
+                <!-- Sticker 2 -->
+                <article class="sticker-card cream">
 
-        <div class="collection-heading">
+                    <div class="sticker-art">
+
+                        <svg viewBox="0 0 220 220">
+
+                            <circle
+                                cx="110"
+                                cy="110"
+                                r="52"
+                                fill="#f5d99a"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
+
+                            <circle
+                                cx="92"
+                                cy="105"
+                                r="5"
+                                fill="#4b3a3a"
+                            />
+
+                            <circle
+                                cx="128"
+                                cy="105"
+                                r="5"
+                                fill="#4b3a3a"
+                            />
+
+                            <path
+                                d="M100 125 Q110 135 120 125"
+                                fill="none"
+                                stroke="#4b3a3a"
+                                stroke-width="4"
+                            />
+
+                            <path
+                                d="M110 55
+                                   C90 35 65 60 80 78
+                                   C90 90 110 75 110 75
+                                   C110 75 130 90 140 78
+                                   C155 60 130 35 110 55Z"
+                                fill="#e99aaa"
+                                stroke="#4b3a3a"
+                                stroke-width="5"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Sweetie</h3>
+
+                    <p>made with love</p>
+
+                </article>
+
+
+                <!-- Sticker 3 -->
+                <article class="sticker-card blue">
+
+                    <div class="sticker-art">
+
+                        <svg viewBox="0 0 220 220">
+
+                            <ellipse
+                                cx="110"
+                                cy="120"
+                                rx="58"
+                                ry="50"
+                                fill="#d8e9e5"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
+
+                            <circle
+                                cx="92"
+                                cy="112"
+                                r="5"
+                                fill="#4b3a3a"
+                            />
+
+                            <circle
+                                cx="128"
+                                cy="112"
+                                r="5"
+                                fill="#4b3a3a"
+                            />
+
+                            <path
+                                d="M105 128 Q110 133 115 128"
+                                fill="none"
+                                stroke="#4b3a3a"
+                                stroke-width="4"
+                            />
+
+                            <!-- flower -->
+                            <circle
+                                cx="165"
+                                cy="65"
+                                r="12"
+                                fill="#f4b6c2"
+                            />
+
+                            <circle
+                                cx="145"
+                                cy="65"
+                                r="12"
+                                fill="#f4b6c2"
+                            />
+
+                            <circle
+                                cx="155"
+                                cy="52"
+                                r="12"
+                                fill="#f4b6c2"
+                            />
+
+                            <circle
+                                cx="155"
+                                cy="70"
+                                r="7"
+                                fill="#f1c86b"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Flower Baby</h3>
+
+                    <p>just a little flower</p>
+
+                </article>
+
+
+                <!-- Sticker 4 -->
+                <article class="sticker-card lavender">
+
+                    <div class="sticker-art">
+
+                        <svg viewBox="0 0 220 220">
+
+                            <!-- moon -->
+                            <path
+                                d="M150 45
+                                   C105 48 82 82 92 118
+                                   C102 155 145 168 175 140
+                                   C140 145 115 118 120 88
+                                   C124 67 136 53 150 45Z"
+                                fill="#c9b9df"
+                                stroke="#4b3a3a"
+                                stroke-width="6"
+                            />
+
+                            <!-- stars -->
+                            <path
+                                d="M55 70 L60 82 L72 87 L60 92 L55 105 L50 92 L38 87 L50 82Z"
+                                fill="#f3c969"
+                            />
+
+                            <path
+                                d="M65 145 L69 153 L78 157 L69 161 L65 170 L61 161 L52 157 L61 153Z"
+                                fill="#f3c969"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                    <h3>Moon Mood</h3>
+
+                    <p>dreamy little night</p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- About -->
+        <section class="about" id="about">
 
             <div>
-                <p>Made for tiny happy moments</p>
+
+                <p class="small-title">
+                    made with code ♡
+                </p>
 
                 <h2>
-                    Sticker collection
+                    A tiny corner<br>
+                    of happiness.
                 </h2>
-            </div>
-
-
-            <button class="search-button" id="openSearch">
-                Find a sticker
-            </button>
-
-        </div>
-
-
-        <div class="sticker-grid" id="stickerGrid">
-            <!-- JavaScript creates stickers here -->
-        </div>
-
-    </section>
-
-
-    <!-- PACKS -->
-    <section class="packs" id="packs">
-
-        <div class="section-title center">
-
-            <p>Little collections</p>
-
-            <h2>
-                Pick your favorite pack
-            </h2>
-
-        </div>
-
-
-        <div class="pack-grid">
-
-            <button class="pack-card" data-category="cute">
-
-                <div class="mini-character pink-cat">
-                    <span class="mini-ear left"></span>
-                    <span class="mini-ear right"></span>
-                    <span class="mini-face"></span>
-                </div>
-
-                <div class="pack-info">
-                    <small>01</small>
-                    <h3>Soft Kitties</h3>
-                </div>
-
-                <span class="arrow">→</span>
-
-            </button>
-
-
-            <button class="pack-card" data-category="love">
-
-                <div class="mini-character love-cat">
-                    <span class="mini-ear left"></span>
-                    <span class="mini-ear right"></span>
-                    <span class="mini-face"></span>
-                </div>
-
-                <div class="pack-info">
-                    <small>02</small>
-                    <h3>Love Club</h3>
-                </div>
-
-                <span class="arrow">→</span>
-
-            </button>
-
-
-            <button class="pack-card" data-category="sleepy">
-
-                <div class="mini-character sleepy-cat">
-                    <span class="mini-ear left"></span>
-                    <span class="mini-ear right"></span>
-                    <span class="mini-face"></span>
-                </div>
-
-                <div class="pack-info">
-                    <small>03</small>
-                    <h3>Sleepy Paws</h3>
-                </div>
-
-                <span class="arrow">→</span>
-
-            </button>
-
-
-            <button class="pack-card" data-category="funny">
-
-                <div class="mini-character silly-cat">
-                    <span class="mini-ear left"></span>
-                    <span class="mini-ear right"></span>
-                    <span class="mini-face"></span>
-                </div>
-
-                <div class="pack-info">
-                    <small>04</small>
-                    <h3>Silly Club</h3>
-                </div>
-
-                <span class="arrow">→</span>
-
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- RANDOM -->
-    <section class="random-section">
-
-        <div class="random-content">
-
-            <p>Can't decide?</p>
-
-            <h2>
-                Let a kitty
-                <span>choose for you.</span>
-            </h2>
-
-            <button class="primary-button" id="randomButton">
-                Pick my sticker
-            </button>
-
-        </div>
-
-
-        <div class="random-display" id="randomDisplay">
-
-            <div class="tiny-cat">
-                <div class="tiny-ear left"></div>
-                <div class="tiny-ear right"></div>
-
-                <div class="tiny-head">
-                    <span class="tiny-eye left"></span>
-                    <span class="tiny-eye right"></span>
-                    <span class="tiny-blush left"></span>
-                    <span class="tiny-blush right"></span>
-                </div>
-
-                <div class="tiny-body"></div>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FAVORITES -->
-    <section class="favorites" id="favorites">
-
-        <div class="section-title center">
-
-            <p>Your personal collection</p>
-
-            <h2>
-                Favorite stickers
-            </h2>
-
-        </div>
-
-
-        <div class="favorite-grid" id="favoriteGrid">
-
-            <div class="favorite-empty">
-
-                <div class="empty-cat">
-                    <span></span>
-                </div>
-
-                <h3>
-                    Your little shelf is empty
-                </h3>
 
                 <p>
-                    Tap the heart on any sticker
-                    to keep it here.
+                    Every little illustration on this website
+                    is created with HTML, CSS and SVG.
                 </p>
 
             </div>
 
-        </div>
+        </section>
 
-    </section>
-
-</main>
+    </main>
 
 
-<!-- SEARCH MODAL -->
-<div class="search-modal" id="searchModal">
+    <!-- Footer -->
+    <footer>
 
-    <div class="search-overlay" id="searchOverlay"></div>
-
-    <div class="search-box">
-
-        <button class="close-button" id="closeSearch">
-            ×
-        </button>
-
-        <p>Find something cute</p>
-
-        <h2>
-            Search stickers
-        </h2>
-
-        <input
-            type="search"
-            id="searchInput"
-            placeholder="Type a mood or sticker name..."
-            autocomplete="off"
-        >
-
-    </div>
-
-</div>
-
-
-<!-- STICKER PREVIEW -->
-<div class="preview-modal" id="previewModal">
-
-    <div class="preview-overlay" id="previewOverlay"></div>
-
-    <div class="preview-box">
-
-        <button class="close-button" id="closePreview">
-            ×
-        </button>
-
-        <div id="previewSticker"></div>
-
-        <p id="previewCategory">
-            CUTE
+        <p>
+            Little Paws · made with lots of cuteness ♡
         </p>
 
-        <h2 id="previewTitle">
-            Little Kitty
-        </h2>
+    </footer>
 
-        <div class="preview-actions">
-
-            <button id="previewFavorite">
-                ♡ Add to favorites
-            </button>
-
-            <button id="previewSave">
-                Save sticker
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="footer-logo">
-        Purrfect
-    </div>
-
-    <p>
-        A tiny sticker world made with code.
-    </p>
-
-    <span>
-        Made with lots of tiny paws.
-    </span>
-
-</footer>
-
-
-<script src="script.js"></script>
-```
 
 </body>
-
 </html>
+
