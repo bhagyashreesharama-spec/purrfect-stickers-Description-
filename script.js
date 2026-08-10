@@ -1236,3 +1236,531 @@ window.addEventListener(
     }
 );
 ```
+// ===============================
+// PURRFECT STICKERS - JAVASCRIPT
+// ===============================
+
+// Sticker Collection
+const stickers = [
+    {
+        emoji: "😺",
+        title: "Happy Cat",
+        caption: "Me when everything finally works 😂",
+        category: "cute"
+    },
+    {
+        emoji: "😹",
+        title: "Laughing Cat",
+        caption: "I said I wouldn't laugh... but here we are 😭",
+        category: "funny"
+    },
+    {
+        emoji: "😼",
+        title: "Suspicious Cat",
+        caption: "I know what you did... 👀",
+        category: "meme"
+    },
+    {
+        emoji: "😾",
+        title: "Angry Cat",
+        caption: "Don't talk to me right now 😾",
+        category: "angry"
+    },
+    {
+        emoji: "😴",
+        title: "Sleepy Cat",
+        caption: "My only plan today: SLEEP 💤",
+        category: "sleepy"
+    },
+    {
+        emoji: "😻",
+        title: "Love Cat",
+        caption: "Sending you virtual meows 💕",
+        category: "love"
+    },
+    {
+        emoji: "😋",
+        title: "Hungry Cat",
+        caption: "Did someone say food? 🍕",
+        category: "food"
+    },
+    {
+        emoji: "😿",
+        title: "Sad Cat",
+        caption: "Nobody asked if I'm okay 🥺",
+        category: "cute"
+    },
+    {
+        emoji: "🙀",
+        title: "Shocked Cat",
+        caption: "WAIT... WHAT?! 😳",
+        category: "funny"
+    },
+    {
+        emoji: "😹",
+        title: "Meme Cat",
+        caption: "This is fine. Everything is totally fine 💀",
+        category: "meme"
+    },
+    {
+        emoji: "😸",
+        title: "Coding Cat",
+        caption: "Just one more bug... famous last words 💻",
+        category: "coding"
+    },
+    {
+        emoji: "🐱",
+        title: "Tiny Cat",
+        caption: "Small cat. BIG attitude. 🐾",
+        category: "cute"
+    }
+];
+
+
+// ===============================
+// GET HTML ELEMENTS
+// ===============================
+
+const gallery = document.getElementById("stickerGallery");
+const favoriteGallery = document.getElementById("favoriteGallery");
+const searchInput = document.getElementById("searchInput");
+
+const modal = document.getElementById("stickerModal");
+const modalSticker = document.getElementById("modalSticker");
+const modalTitle = document.getElementById("modalTitle");
+const modalCaption = document.getElementById("modalCaption");
+const modalCategory = document.getElementById("modalCategory");
+
+const closeModal = document.getElementById("closeModal");
+const downloadSticker = document.getElementById("downloadSticker");
+
+
+// ===============================
+// FAVORITES
+// ===============================
+
+let favorites = [];
+
+
+// ===============================
+// SHOW STICKERS
+// ===============================
+
+function showStickers(list) {
+
+    gallery.innerHTML = "";
+
+    if (list.length === 0) {
+        gallery.innerHTML = `
+            <div class="loading-message">
+                🥺 No cats found!
+                <br>
+                Try another search.
+            </div>
+        `;
+        return;
+    }
+
+    list.forEach((sticker, index) => {
+
+        const card = document.createElement("div");
+
+        card.className = "sticker-card";
+
+        const isFavorite = favorites.includes(index);
+
+        card.innerHTML = `
+            <div class="sticker-image">
+                ${sticker.emoji}
+            </div>
+
+            <button 
+                class="favorite-btn ${isFavorite ? "liked" : ""}"
+                onclick="toggleFavorite(${index})"
+                aria-label="Favorite"
+            >
+                ${isFavorite ? "❤️" : "🤍"}
+            </button>
+
+            <div class="sticker-info">
+
+                <span class="sticker-category">
+                    ${sticker.category}
+                </span>
+
+                <h3>${sticker.title}</h3>
+
+                <p>${sticker.caption}</p>
+
+                <button 
+                    class="view-btn"
+                    onclick="openSticker(${index})"
+                >
+                    View Sticker 👀
+                </button>
+
+            </div>
+        `;
+
+        gallery.appendChild(card);
+    });
+}
+
+
+// ===============================
+// FAVORITE FUNCTION
+// ===============================
+
+function toggleFavorite(index) {
+
+    if (favorites.includes(index)) {
+
+        favorites = favorites.filter(
+            item => item !== index
+        );
+
+    } else {
+
+        favorites.push(index);
+
+    }
+
+    showStickers(stickers);
+    showFavorites();
+}
+
+
+// ===============================
+// SHOW FAVORITES
+// ===============================
+
+function showFavorites() {
+
+    if (favorites.length === 0) {
+
+        favoriteGallery.innerHTML = `
+            <div class="empty-favorites">
+
+                <div class="empty-cat">🥺</div>
+
+                <h3>No favorite cats yet!</h3>
+
+                <p>
+                    Tap ❤️ on a sticker and it'll appear here.
+                </p>
+
+            </div>
+        `;
+
+        return;
+    }
+
+    favoriteGallery.innerHTML = "";
+
+    favorites.forEach(index => {
+
+        const sticker = stickers[index];
+
+        const card = document.createElement("div");
+
+        card.className = "sticker-card favorite-card";
+
+        card.innerHTML = `
+
+            <div class="sticker-image">
+                ${sticker.emoji}
+            </div>
+
+            <div class="sticker-info">
+
+                <span class="sticker-category">
+                    ${sticker.category}
+                </span>
+
+                <h3>${sticker.title}</h3>
+
+                <p>${sticker.caption}</p>
+
+                <button
+                    class="view-btn"
+                    onclick="openSticker(${index})"
+                >
+                    View Sticker 👀
+                </button>
+
+            </div>
+        `;
+
+        favoriteGallery.appendChild(card);
+    });
+}
+
+
+// ===============================
+// CATEGORY FILTER
+// ===============================
+
+const categoryButtons =
+    document.querySelectorAll(".category-btn");
+
+categoryButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        categoryButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const category =
+            button.getAttribute("data-category");
+
+        if (category === "all") {
+
+            showStickers(stickers);
+
+        } else {
+
+            const filtered =
+                stickers.filter(
+                    sticker =>
+                        sticker.category === category
+                );
+
+            showStickers(filtered);
+        }
+    });
+});
+
+
+// ===============================
+// SEARCH
+// ===============================
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", () => {
+
+        const search =
+            searchInput.value.toLowerCase().trim();
+
+        const results =
+            stickers.filter(sticker =>
+                sticker.title.toLowerCase().includes(search) ||
+                sticker.caption.toLowerCase().includes(search) ||
+                sticker.category.toLowerCase().includes(search)
+            );
+
+        showStickers(results);
+    });
+}
+
+
+// ===============================
+// OPEN STICKER MODAL
+// ===============================
+
+function openSticker(index) {
+
+    const sticker = stickers[index];
+
+    modalSticker.textContent = sticker.emoji;
+
+    modalTitle.textContent = sticker.title;
+
+    modalCaption.textContent = sticker.caption;
+
+    modalCategory.textContent =
+        sticker.category.toUpperCase();
+
+    modal.classList.add("show");
+
+    // Remember currently opened sticker
+    modal.dataset.index = index;
+}
+
+
+// ===============================
+// CLOSE MODAL
+// ===============================
+
+function closeStickerModal() {
+
+    modal.classList.remove("show");
+
+}
+
+closeModal.addEventListener(
+    "click",
+    closeStickerModal
+);
+
+
+// Click outside modal
+document.querySelector(".modal-overlay")
+    .addEventListener("click", closeStickerModal);
+
+
+// ===============================
+// DOWNLOAD STICKER
+// ===============================
+
+downloadSticker.addEventListener("click", () => {
+
+    const index =
+        Number(modal.dataset.index);
+
+    const sticker = stickers[index];
+
+    // Create canvas
+    const canvas =
+        document.createElement("canvas");
+
+    canvas.width = 600;
+    canvas.height = 600;
+
+    const ctx =
+        canvas.getContext("2d");
+
+    // Background
+    ctx.fillStyle = "#fff0f6";
+
+    ctx.fillRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    // Sticker
+    ctx.font = "250px Arial";
+
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+
+    ctx.fillText(
+        sticker.emoji,
+        300,
+        280
+    );
+
+    // Title
+    ctx.font = "bold 32px Arial";
+
+    ctx.fillStyle = "#3b2432";
+
+    ctx.fillText(
+        sticker.title,
+        300,
+        500
+    );
+
+    // Download
+    const link =
+        document.createElement("a");
+
+    link.download =
+        `${sticker.title.replaceAll(" ", "-")}.png`;
+
+    link.href =
+        canvas.toDataURL("image/png");
+
+    link.click();
+});
+
+
+// ===============================
+// RANDOM STICKER
+// ===============================
+
+function randomSticker() {
+
+    const randomIndex =
+        Math.floor(
+            Math.random() * stickers.length
+        );
+
+    const sticker =
+        stickers[randomIndex];
+
+    const result =
+        document.getElementById("randomResult");
+
+    result.textContent =
+        sticker.emoji;
+
+    // little animation
+    result.style.transform =
+        "scale(1.3) rotate(10deg)";
+
+    setTimeout(() => {
+
+        result.style.transform =
+            "scale(1) rotate(0deg)";
+
+    }, 300);
+
+}
+
+
+// First random button
+const randomButton =
+    document.getElementById("randomStickerBtn");
+
+if (randomButton) {
+
+    randomButton.addEventListener(
+        "click",
+        randomSticker
+    );
+
+}
+
+
+// Second random button
+const randomButton2 =
+    document.getElementById("randomStickerBtn2");
+
+if (randomButton2) {
+
+    randomButton2.addEventListener(
+        "click",
+        randomSticker
+    );
+
+}
+
+
+// ===============================
+// MOBILE MENU
+// ===============================
+
+const menuButton =
+    document.querySelector(".menu-btn");
+
+const navbar =
+    document.querySelector(".navbar");
+
+if (menuButton) {
+
+    menuButton.addEventListener("click", () => {
+
+        navbar.classList.toggle("open");
+
+    });
+
+}
+
+
+// ===============================
+// INITIAL LOAD
+// ===============================
+
+showStickers(stickers);
+
+showFavorites();
+
+console.log(
+    "🐾 Purrfect Stickers loaded successfully!"
+);
