@@ -1175,3 +1175,39 @@ section {
 
 }
 ```
+/* =========================================================
+   EXTRA STYLING FOR CURRENT HTML
+========================================================= */
+
+.site-header {
+    padding: 0 30px;
+}
+
+.site-header .logo span {
+    color: var(--pink);
+}
+
+.site-header .navbar a {
+    position: relative;
+    padding: 9px 14px;
+    border-radius: 14px;
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.site-header .navbar a:hover {
+    color: var(--pink-dark);
+    background: var(--pink-light);
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        padding: 0 15px;
+    }
+
+    .site-header .navbar {
+        top: 68px;
+    }
+}
