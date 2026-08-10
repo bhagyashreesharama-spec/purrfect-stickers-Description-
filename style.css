@@ -1,6 +1,7 @@
-/* =========================
-   LITTLE PAWS — MAIN STYLE
-   ========================= */
+/* =========================================
+   LITTLE PAWS
+   CUTE AESTHETIC / KAWAII STICKER GALLERY
+   ========================================= */
 
 * {
     margin: 0;
@@ -13,127 +14,201 @@ html {
 }
 
 body {
-    font-family: "Trebuchet MS", Arial, sans-serif;
-    background: #fffaf7;
-    color: #4b3a3a;
+    min-height: 100vh;
     overflow-x: hidden;
+
+    font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif;
+
+    color: #514040;
+
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255, 214, 222, .45) 0 2px, transparent 3px),
+        radial-gradient(circle at 85% 30%, rgba(214, 231, 224, .5) 0 2px, transparent 3px),
+        #fffaf5;
+
+    background-size: 35px 35px;
 }
 
 
-/* =========================
+/* =========================================
    NAVBAR
-   ========================= */
+   ========================================= */
 
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
     width: 100%;
-    padding: 22px 7%;
+    padding: 18px 7%;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    background: rgba(255, 250, 247, 0.92);
+    background: rgba(255, 250, 245, .9);
+    backdrop-filter: blur(12px);
 
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    border-bottom: 1px solid #f3dfd8;
+    border-bottom: 2px dashed #f0d8d3;
 }
 
 .logo {
     font-size: 1.35rem;
-    font-weight: bold;
-    letter-spacing: 1px;
+    font-weight: 900;
+    color: #d98696;
+
+    transform: rotate(-2deg);
 }
 
 .navbar nav {
     display: flex;
-    gap: 28px;
+    gap: 30px;
 }
 
-.navbar a {
-    text-decoration: none;
+.navbar nav a {
     color: #6c5555;
-    font-size: 0.95rem;
-    transition: 0.3s ease;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 700;
+
+    transition: .25s ease;
 }
 
-.navbar a:hover {
-    color: #d78391;
+.navbar nav a:hover {
+    color: #d98696;
+    transform: translateY(-2px);
 }
 
 
-/* =========================
+/* =========================================
    HERO
-   ========================= */
+   ========================================= */
 
 .hero {
-    min-height: 90vh;
-    padding: 70px 8%;
+    position: relative;
+
+    min-height: 92vh;
+    padding: 80px 8%;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
 
-    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "✦";
+
+    position: absolute;
+    top: 15%;
+    left: 5%;
+
+    font-size: 30px;
+    color: #e7bb72;
+
+    transform: rotate(-15deg);
+}
+
+.hero::after {
+    content: "♡";
+
+    position: absolute;
+    right: 8%;
+    top: 18%;
+
+    font-size: 45px;
+    color: #e7a0ad;
+
+    transform: rotate(12deg);
 }
 
 .hero-text {
-    max-width: 570px;
+    max-width: 600px;
 }
 
 .small-title {
-    color: #c98691;
-    text-transform: lowercase;
-    letter-spacing: 2px;
-    font-size: 0.82rem;
     margin-bottom: 15px;
+
+    color: #cf8493;
+
+    font-size: .8rem;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-    font-size: clamp(3rem, 6vw, 5.8rem);
-    line-height: 0.95;
-    font-weight: 800;
-    letter-spacing: -3px;
+    font-size: clamp(3.2rem, 7vw, 6.5rem);
+    line-height: .9;
+
+    letter-spacing: -5px;
 }
 
 .hero h1 span {
     display: block;
-    color: #d98998;
+    color: #dc91a0;
+
+    position: relative;
+}
+
+.hero h1 span::after {
+    content: "";
+
+    position: absolute;
+    left: 4px;
+    bottom: -10px;
+
+    width: 170px;
+    height: 8px;
+
+    border-bottom: 4px wavy #efb4bd;
 }
 
 .hero-description {
-    max-width: 480px;
-    margin: 28px 0;
+    max-width: 500px;
+
+    margin: 35px 0;
+
+    color: #806d6d;
+
     line-height: 1.8;
-    color: #806b6b;
-    font-size: 1rem;
 }
 
 .cute-button {
     display: inline-block;
-    padding: 14px 25px;
 
-    background: #e9a3af;
+    padding: 15px 28px;
+
+    background: #e69aa8;
     color: white;
 
     text-decoration: none;
+    font-weight: 800;
+
+    border: 5px solid white;
     border-radius: 50px;
 
-    box-shadow: 0 8px 20px rgba(180, 120, 130, 0.18);
+    box-shadow:
+        0 8px 0 #c97988,
+        0 14px 25px rgba(110, 70, 70, .12);
 
-    transition: 0.3s ease;
+    transition: .25s ease;
 }
 
 .cute-button:hover {
-    transform: translateY(-4px) rotate(-1deg);
+    transform: translateY(-5px) rotate(-2deg);
+    box-shadow:
+        0 12px 0 #c97988,
+        0 18px 30px rgba(110, 70, 70, .15);
 }
 
 
-/* =========================
-   HERO STICKER
-   ========================= */
+/* =========================================
+   HERO MAIN STICKER
+   ========================================= */
 
 .hero-sticker {
     display: flex;
@@ -142,33 +217,67 @@ body {
 }
 
 .sticker-paper {
+    position: relative;
+
     width: min(430px, 80vw);
     aspect-ratio: 1;
 
-    background: #f7ded5;
-
-    border: 13px solid white;
-    border-radius: 42% 58% 55% 45% / 45% 40% 60% 55%;
-
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    background: #f8dcd5;
+
+    border: 15px solid white;
+
+    border-radius:
+        53% 47% 43% 57% /
+        47% 55% 45% 53%;
 
     box-shadow:
-        0 18px 35px rgba(90, 60, 60, 0.12),
-        0 3px 0 rgba(90, 60, 60, 0.05);
+        0 18px 0 rgba(220, 180, 170, .35),
+        0 25px 45px rgba(80, 55, 55, .12);
 
     transform: rotate(4deg);
 
-    animation: floatingSticker 4s ease-in-out infinite;
+    animation: floatSticker 4s ease-in-out infinite;
+}
+
+.sticker-paper::before {
+    content: "✦  ♡  ✦";
+
+    position: absolute;
+    top: 18px;
+    left: 30px;
+
+    color: #dca5af;
+    font-size: 18px;
+
+    transform: rotate(-8deg);
+}
+
+.sticker-paper::after {
+    content: "✿";
+
+    position: absolute;
+    right: 35px;
+    bottom: 25px;
+
+    color: #d59a9f;
+    font-size: 28px;
+
+    transform: rotate(10deg);
 }
 
 .cat-drawing {
     width: 78%;
-    filter: drop-shadow(0 8px 5px rgba(80, 50, 50, 0.08));
+
+    filter:
+        drop-shadow(0 9px 0 rgba(255,255,255,.9))
+        drop-shadow(0 15px 9px rgba(80,50,50,.12));
 }
 
-@keyframes floatingSticker {
+@keyframes floatSticker {
 
     0%,
     100% {
@@ -176,137 +285,270 @@ body {
     }
 
     50% {
-        transform: rotate(1deg) translateY(-12px);
+        transform: rotate(1deg) translateY(-14px);
     }
 }
 
 
-/* =========================
-   STICKER SECTION
-   ========================= */
+/* =========================================
+   STICKER GALLERY
+   ========================================= */
 
 .stickers-section {
-    padding: 100px 7%;
-    background: #fff;
-    text-align: center;
+    position: relative;
+
+    padding: 110px 6% 130px;
+
+    background: #fffdfb;
+
+    border-top:
+        2px dashed #efd9d4;
+
+    border-bottom:
+        2px dashed #efd9d4;
+}
+
+.stickers-section::before {
+    content: "little things make me happy ♡";
+
+    position: absolute;
+    top: 30px;
+    left: 7%;
+
+    font-size: .75rem;
+    color: #c99999;
+
+    transform: rotate(-3deg);
 }
 
 .stickers-section h2 {
-    font-size: clamp(2.3rem, 5vw, 4rem);
-    letter-spacing: -2px;
+    text-align: center;
+
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    letter-spacing: -3px;
+
     margin-bottom: 12px;
 }
 
 .section-description {
-    color: #907b7b;
-    margin-bottom: 50px;
+    text-align: center;
+
+    color: #927d7d;
+
+    margin-bottom: 65px;
 }
 
 
-/* =========================
-   PINTEREST STYLE GRID
-   ========================= */
+/* =========================================
+   MASONRY / STICKER WALL
+   ========================================= */
 
 .sticker-grid {
-    max-width: 1200px;
+    width: min(1250px, 100%);
     margin: auto;
 
-    columns: 4 220px;
-    column-gap: 22px;
+    columns: 4 210px;
+    column-gap: 28px;
 }
 
 
-/* =========================
-   STICKER CARDS
-   ========================= */
+/* =========================================
+   STICKER — NO BORING CARD
+   ========================================= */
 
 .sticker-card {
+    position: relative;
+
     display: inline-block;
+
     width: 100%;
 
-    margin: 0 0 22px;
+    margin: 0 0 38px;
 
-    padding: 25px;
+    padding: 20px 15px 25px;
 
-    border: 9px solid white;
-    border-radius: 28px;
+    text-align: center;
 
-    box-shadow:
-        0 12px 28px rgba(80, 50, 50, 0.09);
+    background: transparent;
+
+    border: none;
 
     break-inside: avoid;
 
-    transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease;
-
     cursor: pointer;
+
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        filter .35s ease;
 }
 
-.sticker-card:hover {
-    transform: translateY(-8px) rotate(-2deg);
+
+/*
+   Fake white die-cut border behind
+   the SVG artwork
+*/
+
+.sticker-card::before {
+    content: "";
+
+    position: absolute;
+
+    z-index: -1;
+
+    left: 8%;
+    right: 8%;
+    top: 7%;
+    bottom: 12%;
+
+    background: white;
+
+    border-radius:
+        48% 52% 45% 55% /
+        55% 43% 57% 45%;
 
     box-shadow:
-        0 20px 35px rgba(80, 50, 50, 0.14);
+        0 12px 18px rgba(90,60,60,.10);
+
+    transform: rotate(-2deg);
 }
 
 
-/* card backgrounds */
+/* different sticker shapes */
 
-.pink {
-    background: #fde8e8;
+.sticker-card:nth-child(2)::before {
+    border-radius: 45% 55% 58% 42%;
+    transform: rotate(3deg);
 }
 
-.cream {
-    background: #fff1ce;
+.sticker-card:nth-child(3)::before {
+    border-radius: 60% 40% 45% 55%;
+    transform: rotate(-4deg);
 }
 
-.blue {
-    background: #e2f0ed;
+.sticker-card:nth-child(4)::before {
+    border-radius: 42% 58% 52% 48%;
+    transform: rotate(2deg);
 }
 
-.lavender {
-    background: #eee7f7;
+.sticker-card:nth-child(5)::before {
+    border-radius: 55% 45% 40% 60%;
+    transform: rotate(-3deg);
+}
+
+.sticker-card:nth-child(6)::before {
+    border-radius: 50% 50% 60% 40%;
+    transform: rotate(4deg);
 }
 
 
-/* =========================
-   SVG STICKER ART
-   ========================= */
+/* =========================================
+   ACTUAL STICKER ART
+   ========================================= */
 
 .sticker-art {
+    position: relative;
+
     width: 100%;
-    margin-bottom: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
 }
 
 .sticker-art svg {
     width: 100%;
-    height: auto;
+    max-width: 230px;
+
+    overflow: visible;
 
     filter:
-        drop-shadow(0 7px 4px rgba(70, 50, 50, 0.08));
+        drop-shadow(0 0 0 white)
+        drop-shadow(0 0 0 white)
+        drop-shadow(0 0 0 white)
+        drop-shadow(0 10px 7px rgba(70,50,50,.13));
 
-    transition: transform 0.35s ease;
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+}
+
+
+/*
+   White sticker-cut outline
+*/
+
+.sticker-art svg {
+    paint-order: stroke fill;
+}
+
+
+/* =========================================
+   HOVER
+   ========================================= */
+
+.sticker-card:hover {
+    transform:
+        translateY(-12px)
+        rotate(var(--random-rotate, -2deg));
 }
 
 .sticker-card:hover .sticker-art svg {
-    transform: rotate(4deg) scale(1.05);
+    transform:
+        scale(1.08)
+        rotate(4deg);
+
+    filter:
+        drop-shadow(0 0 7px rgba(255,255,255,.95))
+        drop-shadow(0 14px 8px rgba(70,50,50,.15));
 }
 
+
+/* =========================================
+   STICKER LABEL
+   ========================================= */
+
 .sticker-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 6px;
+    margin-top: 8px;
+
+    font-size: 1rem;
+
+    color: #594545;
 }
 
 .sticker-card p {
-    font-size: 0.85rem;
-    color: #806d6d;
+    margin-top: 5px;
+
+    font-size: .75rem;
+
+    color: #9a8181;
 }
 
 
-/* =========================
+/* =========================================
+   LITTLE DOODLES AROUND GALLERY
+   ========================================= */
+
+.stickers-section::after {
+    content: "✿    ✦    ♡    ✧    ✿";
+
+    position: absolute;
+
+    right: 6%;
+    bottom: 35px;
+
+    color: #e2a8b0;
+
+    font-size: 20px;
+
+    transform: rotate(4deg);
+}
+
+
+/* =========================================
    ABOUT
-   ========================= */
+   ========================================= */
 
 .about {
     min-height: 65vh;
@@ -316,62 +558,63 @@ body {
     display: flex;
     align-items: center;
 
-    background: #f8e9e5;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            #eadff3 0 90px,
+            transparent 91px
+        ),
+        #f8e8e3;
 }
 
 .about h2 {
-    font-size: clamp(2.5rem, 5vw, 4.5rem);
-    line-height: 1;
-    letter-spacing: -2px;
-    margin-bottom: 25px;
+    font-size: clamp(2.7rem, 6vw, 5.5rem);
+
+    line-height: .95;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 30px;
 }
 
 .about p:last-child {
-    max-width: 520px;
-    color: #806d6d;
+    max-width: 540px;
+
+    color: #806b6b;
+
     line-height: 1.8;
 }
 
 
-/* =========================
+/* =========================================
    FOOTER
-   ========================= */
+   ========================================= */
 
 footer {
-    padding: 28px;
+    padding: 30px;
+
     text-align: center;
 
-    background: #4b3a3a;
-    color: #fff7f4;
+    background: #513f3f;
 
-    font-size: 0.85rem;
+    color: #fff7f3;
+
+    font-size: .8rem;
 }
 
 
-/* =========================
+/* =========================================
    MOBILE
-   ========================= */
+   ========================================= */
 
-@media (max-width: 800px) {
-
-    .navbar {
-        padding: 18px 5%;
-    }
-
-    .navbar nav {
-        gap: 15px;
-    }
-
-    .navbar a {
-        font-size: 0.8rem;
-    }
+@media (max-width: 850px) {
 
     .hero {
-        min-height: auto;
-        padding: 60px 7% 80px;
-
         grid-template-columns: 1fr;
+
         text-align: center;
+
+        padding-top: 60px;
     }
 
     .hero-text {
@@ -384,60 +627,102 @@ footer {
     }
 
     .hero-sticker {
-        margin-top: 20px;
+        margin-top: 25px;
     }
 
     .sticker-paper {
-        width: min(340px, 82vw);
+        width: min(350px, 80vw);
     }
 
     .sticker-grid {
-        columns: 2 150px;
-        column-gap: 15px;
+        columns: 3 170px;
+    }
+
+    .stickers-section {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 15px 5%;
+
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar nav {
+        gap: 20px;
+    }
+
+    .hero {
+        min-height: auto;
+
+        padding:
+            55px 7%
+            90px;
+    }
+
+    .hero h1 {
+        font-size: 3.3rem;
+        letter-spacing: -3px;
+    }
+
+    .hero::before {
+        left: 8%;
+        top: 7%;
+    }
+
+    .hero::after {
+        right: 7%;
+        top: 12%;
+    }
+
+    .sticker-grid {
+        columns: 2 135px;
+
+        column-gap: 10px;
     }
 
     .sticker-card {
-        padding: 15px;
-        border-width: 6px;
-        border-radius: 22px;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
+        padding: 10px 5px 18px;
+    }
+
+    .sticker-art {
+        padding: 5px;
+    }
+
+    .sticker-card h3 {
+        font-size: .85rem;
+    }
+
+    .sticker-card p {
+        font-size: .68rem;
+    }
+
+    .stickers-section h2 {
+        font-size: 2.5rem;
     }
 
     .about {
-        min-height: 50vh;
+        min-height: 55vh;
+
         padding: 80px 8%;
     }
 }
 
 
-/* =========================
-   SMALL PHONES
-   ========================= */
+@media (max-width: 380px) {
 
-@media (max-width: 480px) {
-
-    .navbar {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .hero {
-        padding-top: 45px;
+    .sticker-grid {
+        columns: 2 120px;
     }
 
     .hero h1 {
-        font-size: 3rem;
-    }
-
-    .sticker-grid {
-        columns: 2 130px;
-    }
-
-    .sticker-card h3 {
-        font-size: 0.95rem;
-    }
-
-    .sticker-card p {
-        font-size: 0.75rem;
+        font-size: 2.8rem;
     }
 }
