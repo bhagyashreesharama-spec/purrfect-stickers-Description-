@@ -1,7 +1,6 @@
-/* =========================================
-   🐾 PURRFECT STICKERS
-   CUTE ANIME / CHIBI STICKER STYLE
-========================================= */
+/* =========================
+   LITTLE PAWS — MAIN STYLE
+   ========================= */
 
 * {
     margin: 0;
@@ -15,1647 +14,430 @@ html {
 
 body {
     font-family: "Trebuchet MS", Arial, sans-serif;
-    background: #fff8fc;
-    color: #382530;
-    line-height: 1.6;
+    background: #fffaf7;
+    color: #4b3a3a;
     overflow-x: hidden;
 }
 
-button,
-input {
-    font: inherit;
-}
 
-button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-
-/* =========================================
-   BACKGROUND
-========================================= */
-
-body::before {
-    content: "";
-    position: fixed;
-    width: 320px;
-    height: 320px;
-    top: 120px;
-    left: -170px;
-    background: #ffd9e9;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: .55;
-    pointer-events: none;
-    z-index: -2;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 350px;
-    height: 350px;
-    right: -180px;
-    bottom: 80px;
-    background: #e9dcff;
-    border-radius: 50%;
-    filter: blur(90px);
-    opacity: .45;
-    pointer-events: none;
-    z-index: -2;
-}
-
-
-/* =========================================
-   FLOATING DECOR
-========================================= */
-
-.background-decor {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.background-decor span {
-    position: absolute;
-    color: #eca6c5;
-    opacity: .45;
-    animation: backgroundFloat 7s ease-in-out infinite;
-}
-
-.background-decor span:nth-child(1) {
-    left: 7%;
-    top: 20%;
-    font-size: 22px;
-}
-
-.background-decor span:nth-child(2) {
-    left: 20%;
-    top: 70%;
-    font-size: 28px;
-    animation-delay: 1s;
-}
-
-.background-decor span:nth-child(3) {
-    right: 15%;
-    top: 25%;
-    font-size: 18px;
-    animation-delay: 2s;
-}
-
-.background-decor span:nth-child(4) {
-    right: 8%;
-    top: 65%;
-    font-size: 25px;
-    animation-delay: 3s;
-}
-
-.background-decor span:nth-child(5) {
-    left: 45%;
-    top: 12%;
-    font-size: 16px;
-    animation-delay: 1.5s;
-}
-
-.background-decor span:nth-child(6) {
-    right: 35%;
-    bottom: 15%;
-    font-size: 24px;
-    animation-delay: 2.5s;
-}
-
-@keyframes backgroundFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(0);
-    }
-
-    50% {
-        transform: translateY(-18px) rotate(12deg);
-    }
-}
-
-
-/* =========================================
+/* =========================
    NAVBAR
-========================================= */
+   ========================= */
 
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
+    width: 100%;
+    padding: 22px 7%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 17px 7%;
+    background: rgba(255, 250, 247, 0.92);
 
-    background: rgba(255,255,255,.82);
-    backdrop-filter: blur(18px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 
-    border-bottom: 1px solid #f4dce8;
+    border-bottom: 1px solid #f3dfd8;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-
-    font-size: 21px;
-    font-weight: 900;
-
-    color: #d94f87;
+.logo {
+    font-size: 1.35rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.brand-paw {
-    animation: pawBounce 2s ease-in-out infinite;
-}
-
-@keyframes pawBounce {
-    0%,100% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(-10deg) scale(1.1);
-    }
-}
-
-.nav-links {
+.navbar nav {
     display: flex;
     gap: 28px;
 }
 
-.nav-links a {
-    font-size: 14px;
-    font-weight: 700;
-    transition: .25s;
+.navbar a {
+    text-decoration: none;
+    color: #6c5555;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
 }
 
-.nav-links a:hover {
-    color: #d94f87;
-    transform: translateY(-2px);
-}
-
-.search-icon,
-.menu-toggle {
-    border: none;
-    background: #ffeaf3;
-    border-radius: 13px;
-    padding: 9px 12px;
-}
-
-.menu-toggle {
-    display: none;
+.navbar a:hover {
+    color: #d78391;
 }
 
 
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-.mobile-menu {
-    position: fixed;
-    inset: 0;
-    z-index: 3000;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 25px;
-
-    background: rgba(255,248,252,.96);
-    backdrop-filter: blur(20px);
-
-    transform: translateX(100%);
-    transition: .4s ease;
-}
-
-.mobile-menu.open {
-    transform: translateX(0);
-}
-
-.mobile-menu a {
-    font-size: 25px;
-    font-weight: 800;
-    color: #4b303d;
-}
-
-.mobile-close {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-
-    border: none;
-    background: #ffe5f0;
-
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-}
-
-
-/* =========================================
+/* =========================
    HERO
-========================================= */
+   ========================= */
 
 .hero {
-    min-height: 650px;
+    min-height: 90vh;
+    padding: 70px 8%;
 
-    padding: 90px 8%;
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-between;
+    gap: 40px;
 
-    gap: 50px;
-
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            #ffddeb,
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #fffaff,
-            #fff0f7
-        );
+    position: relative;
 }
 
-.hero-content {
-    max-width: 650px;
+.hero-text {
+    max-width: 570px;
 }
 
-.eyebrow {
-    display: inline-block;
-
-    padding: 8px 14px;
-
-    border-radius: 30px;
-
-    background: #ffe8f2;
-
-    color: #d94f87;
-
-    font-weight: 800;
-    font-size: 13px;
-
-    margin-bottom: 18px;
+.small-title {
+    color: #c98691;
+    text-transform: lowercase;
+    letter-spacing: 2px;
+    font-size: 0.82rem;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 78px);
-    line-height: 1.03;
-    margin-bottom: 25px;
+    font-size: clamp(3rem, 6vw, 5.8rem);
+    line-height: 0.95;
+    font-weight: 800;
+    letter-spacing: -3px;
 }
 
 .hero h1 span {
     display: block;
-    color: #d94f87;
+    color: #d98998;
 }
 
-.hero-content > p {
-    max-width: 550px;
-
-    color: #765b68;
-    font-size: 18px;
-
-    margin-bottom: 30px;
+.hero-description {
+    max-width: 480px;
+    margin: 28px 0;
+    line-height: 1.8;
+    color: #806b6b;
+    font-size: 1rem;
 }
 
-.hero-actions {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
+.cute-button {
+    display: inline-block;
+    padding: 14px 25px;
 
-.primary-action,
-.secondary-action {
-    border-radius: 15px;
-    padding: 14px 22px;
-
-    font-weight: 800;
-
-    transition: .3s;
-}
-
-.primary-action {
-    border: none;
-    background: #d94f87;
+    background: #e9a3af;
     color: white;
 
-    box-shadow: 0 10px 25px rgba(217,79,135,.22);
+    text-decoration: none;
+    border-radius: 50px;
+
+    box-shadow: 0 8px 20px rgba(180, 120, 130, 0.18);
+
+    transition: 0.3s ease;
 }
 
-.secondary-action {
-    border: 2px solid #f0b4cc;
-    background: white;
-    color: #d94f87;
-}
-
-.primary-action:hover,
-.secondary-action:hover {
-    transform: translateY(-4px);
+.cute-button:hover {
+    transform: translateY(-4px) rotate(-1deg);
 }
 
 
-/* =========================================
-   HERO ART
-========================================= */
+/* =========================
+   HERO STICKER
+   ========================= */
 
-.hero-art {
-    position: relative;
-
-    width: 400px;
-    height: 400px;
-
-    display: grid;
-    place-items: center;
+.hero-sticker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero-cat {
-    width: 260px;
-    height: 260px;
+.sticker-paper {
+    width: min(430px, 80vw);
+    aspect-ratio: 1;
 
-    display: grid;
-    place-items: center;
+    background: #f7ded5;
 
-    font-size: 135px;
+    border: 13px solid white;
+    border-radius: 42% 58% 55% 45% / 45% 40% 60% 55%;
 
-    background: #ffe0ed;
-
-    border-radius: 48% 52% 55% 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     box-shadow:
-        0 25px 60px rgba(217,79,135,.18);
+        0 18px 35px rgba(90, 60, 60, 0.12),
+        0 3px 0 rgba(90, 60, 60, 0.05);
 
-    animation: heroFloat 3.5s ease-in-out infinite;
+    transform: rotate(4deg);
+
+    animation: floatingSticker 4s ease-in-out infinite;
 }
 
-@keyframes heroFloat {
-    0%,100% {
-        transform: translateY(0) rotate(-2deg);
+.cat-drawing {
+    width: 78%;
+    filter: drop-shadow(0 8px 5px rgba(80, 50, 50, 0.08));
+}
+
+@keyframes floatingSticker {
+
+    0%,
+    100% {
+        transform: rotate(4deg) translateY(0);
     }
 
     50% {
-        transform: translateY(-14px) rotate(3deg);
-    }
-}
-
-.floating-sticker {
-    position: absolute;
-
-    width: 75px;
-    height: 75px;
-
-    display: grid;
-    place-items: center;
-
-    background: white;
-
-    border: 7px solid white;
-
-    border-radius: 40% 60% 55% 45%;
-
-    box-shadow:
-        0 8px 0 #efd5e0,
-        0 15px 25px rgba(70,30,50,.12);
-
-    font-size: 38px;
-
-    animation: miniFloat 3s ease-in-out infinite;
-}
-
-.sticker-one {
-    top: 20px;
-    left: 30px;
-}
-
-.sticker-two {
-    top: 50px;
-    right: 10px;
-    animation-delay: .5s;
-}
-
-.sticker-three {
-    bottom: 30px;
-    left: 30px;
-    animation-delay: 1s;
-}
-
-.sticker-four {
-    bottom: 10px;
-    right: 30px;
-    animation-delay: 1.5s;
-}
-
-@keyframes miniFloat {
-    0%,100% {
-        transform: translateY(0) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(6deg);
-    }
-}
-
-.sparkle {
-    position: absolute;
-    color: #e993b5;
-    font-size: 25px;
-    animation: sparkle 2s ease-in-out infinite;
-}
-
-.sparkle-one {
-    top: 0;
-    right: 110px;
-}
-
-.sparkle-two {
-    bottom: 90px;
-    right: 0;
-}
-
-.sparkle-three {
-    top: 120px;
-    left: 0;
-}
-
-@keyframes sparkle {
-    0%,100% {
-        opacity: .4;
-        transform: scale(.8) rotate(0);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.3) rotate(25deg);
-    }
-}
-
-.mini-heart {
-    position: absolute;
-    top: 80px;
-    left: 100px;
-
-    font-size: 45px;
-    color: #e889ae;
-
-    animation: heartFloat 2s ease-in-out infinite;
-}
-
-@keyframes heartFloat {
-    0%,100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
+        transform: rotate(1deg) translateY(-12px);
     }
 }
 
 
-/* =========================================
-   SECTIONS
-========================================= */
+/* =========================
+   STICKER SECTION
+   ========================= */
 
-.section-space {
-    padding: 90px 8%;
-}
-
-.section-heading span {
-    color: #d94f87;
-    font-weight: 800;
-    font-size: 13px;
-}
-
-.section-heading h2 {
-    font-size: clamp(30px,4vw,48px);
-    line-height: 1.15;
-    margin-top: 7px;
-}
-
-.centered {
+.stickers-section {
+    padding: 100px 7%;
+    background: #fff;
     text-align: center;
 }
 
-
-/* =========================================
-   MOODS
-========================================= */
-
-.moods {
-    background: white;
+.stickers-section h2 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    letter-spacing: -2px;
+    margin-bottom: 12px;
 }
 
-.mood-list {
-    margin-top: 35px;
-
-    display: grid;
-    grid-template-columns:
-        repeat(6, minmax(110px,1fr));
-
-    gap: 15px;
-}
-
-.mood-card {
-    border: 1px solid #f2dce6;
-
-    background: #fff9fc;
-
-    border-radius: 22px;
-
-    padding: 20px 12px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 8px;
-
-    transition: .3s;
-}
-
-.mood-card span {
-    font-size: 30px;
-}
-
-.mood-card strong {
-    font-size: 13px;
-}
-
-.mood-card:hover,
-.mood-card.active {
-    background: #ffe5f0;
-    border-color: #e99aba;
-
-    transform: translateY(-5px);
+.section-description {
+    color: #907b7b;
+    margin-bottom: 50px;
 }
 
 
-/* =========================================
-   STICKER COLLECTION
-========================================= */
+/* =========================
+   PINTEREST STYLE GRID
+   ========================= */
 
-.stickers {
-    padding: 90px 8%;
-}
+.sticker-grid {
+    max-width: 1200px;
+    margin: auto;
 
-.collection-top {
-    display: flex;
-    align-items: end;
-    justify-content: space-between;
-
-    gap: 25px;
-
-    margin-bottom: 40px;
-}
-
-.find-button {
-    border: none;
-
-    padding: 13px 20px;
-
-    border-radius: 15px;
-
-    background: #3c2934;
-    color: white;
-
-    font-weight: 800;
-
-    transition: .3s;
-}
-
-.find-button:hover {
-    transform: translateY(-3px);
+    columns: 4 220px;
+    column-gap: 22px;
 }
 
 
-/* =========================================
-   STICKER GRID
-========================================= */
-
-.sticker-grid,
-.favorite-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, minmax(0,1fr));
-
-    gap: 24px;
-}
-
-
-/* =========================================
-   STICKER CARD
-========================================= */
+/* =========================
+   STICKER CARDS
+   ========================= */
 
 .sticker-card {
-    overflow: hidden;
+    display: inline-block;
+    width: 100%;
 
-    border-radius: 30px;
+    margin: 0 0 22px;
 
-    background: rgba(255,255,255,.9);
+    padding: 25px;
 
-    border: 1px solid #f4dce7;
+    border: 9px solid white;
+    border-radius: 28px;
 
     box-shadow:
-        0 12px 35px rgba(70,30,50,.07);
+        0 12px 28px rgba(80, 50, 50, 0.09);
+
+    break-inside: avoid;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    cursor: pointer;
 }
 
 .sticker-card:hover {
-    transform:
-        translateY(-9px)
-        rotate(-1deg);
+    transform: translateY(-8px) rotate(-2deg);
 
     box-shadow:
-        0 25px 50px rgba(70,30,50,.13);
+        0 20px 35px rgba(80, 50, 50, 0.14);
 }
 
 
-/* =========================================
-   ✨ MAIN STICKER DISPLAY
-========================================= */
+/* card backgrounds */
 
-.sticker-visual {
-    position: relative;
+.pink {
+    background: #fde8e8;
+}
 
-    height: 250px;
+.cream {
+    background: #fff1ce;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.blue {
+    background: #e2f0ed;
+}
 
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 20% 25%,
-            white 0 4px,
-            transparent 5px
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            #ffd4e7 0 5px,
-            transparent 6px
-        ),
-        linear-gradient(
-            135deg,
-            #fff9fc,
-            #ffeaf4
-        );
+.lavender {
+    background: #eee7f7;
 }
 
 
-/* =========================================
-   ANIME / CHIBI STICKER
-========================================= */
+/* =========================
+   SVG STICKER ART
+   ========================= */
 
 .sticker-art {
-    position: relative;
-
-    width: 155px;
-    height: 155px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: white;
-
-    border: 9px solid white;
-
-    border-radius:
-        45% 55% 50% 50%;
-
-    font-size: 80px;
-
-    line-height: 1;
-
-    box-shadow:
-        0 10px 0 #ead1dd,
-        0 20px 30px rgba(65,30,50,.16);
-
-    animation:
-        cuteStickerFloat
-        3.5s
-        ease-in-out
-        infinite;
-
-    transition: .35s;
-
-    z-index: 2;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
-
-/* thick die-cut outline */
-
-.sticker-art::before {
-    content: "";
-
-    position: absolute;
-
-    inset: -18px;
-
-    border: 6px solid white;
-
-    border-radius:
-        46% 54% 52% 48%;
-
-    z-index: -1;
-}
-
-
-/* cute shine */
-
-.sticker-art::after {
-    content: "✦";
-
-    position: absolute;
-
-    top: -20px;
-    right: -25px;
-
-    color: #efa0c0;
-
-    font-size: 24px;
-
-    animation:
-        shine 1.8s
-        ease-in-out
-        infinite;
-}
-
-
-/* =========================================
-   REAL IMAGE STICKER SUPPORT
-========================================= */
-
-.sticker-art img {
-    width: 135%;
-    height: 135%;
-
-    object-fit: contain;
-
-    display: block;
+.sticker-art svg {
+    width: 100%;
+    height: auto;
 
     filter:
-        drop-shadow(
-            0 10px 5px rgba(70,30,50,.14)
-        );
+        drop-shadow(0 7px 4px rgba(70, 50, 50, 0.08));
 
-    transition: .35s;
+    transition: transform 0.35s ease;
 }
 
-.sticker-card:hover
-.sticker-art img {
-    transform:
-        scale(1.08)
-        rotate(4deg);
+.sticker-card:hover .sticker-art svg {
+    transform: rotate(4deg) scale(1.05);
 }
 
-
-/* =========================================
-   STICKER ANIMATION
-========================================= */
-
-@keyframes cuteStickerFloat {
-
-    0%,100% {
-        transform:
-            translateY(0)
-            rotate(-4deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotate(4deg);
-    }
+.sticker-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 6px;
 }
 
-@keyframes shine {
-
-    0%,100% {
-        opacity: .35;
-        transform: scale(.8) rotate(0);
-    }
-
-    50% {
-        opacity: 1;
-        transform: scale(1.3) rotate(20deg);
-    }
+.sticker-card p {
+    font-size: 0.85rem;
+    color: #806d6d;
 }
 
 
-/* =========================================
-   STICKER INFO
-========================================= */
+/* =========================
+   ABOUT
+   ========================= */
 
-.sticker-details {
-    padding: 18px 20px 21px;
-}
+.about {
+    min-height: 65vh;
 
-.sticker-details small {
-    display: inline-block;
-
-    padding: 5px 10px;
-
-    border-radius: 20px;
-
-    background: #fff0f6;
-
-    color: #d94f87;
-
-    font-size: 10px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
-}
-
-.sticker-details h3 {
-    margin-top: 8px;
-
-    font-size: 19px;
-}
-
-.sticker-bottom {
-    display: flex;
-    align-items: center;
-
-    gap: 9px;
-
-    margin-top: 15px;
-}
-
-.view-sticker {
-    flex: 1;
-
-    border: none;
-
-    padding: 10px;
-
-    border-radius: 12px;
-
-    background: #ffe7f1;
-
-    color: #c74378;
-
-    font-weight: 800;
-
-    transition: .25s;
-}
-
-.view-sticker:hover {
-    background: #ffd5e5;
-    transform: translateY(-2px);
-}
-
-.card-heart {
-    width: 43px;
-    height: 43px;
-
-    border: 1px solid #f1cada;
-
-    border-radius: 13px;
-
-    background: white;
-
-    color: #df7099;
-
-    font-size: 20px;
-
-    transition: .25s;
-}
-
-.card-heart:hover {
-    transform: scale(1.1);
-}
-
-.card-heart.active {
-    background: #ffe0ec;
-    color: #d94f87;
-}
-
-
-/* =========================================
-   PACKS
-========================================= */
-
-.packs {
-    background: white;
-}
-
-.pack-grid {
-    margin-top: 40px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap: 18px;
-}
-
-.pack-card {
-    border: 1px solid #f1dbe6;
-
-    background: #fff9fc;
-
-    border-radius: 25px;
-
-    padding: 18px;
+    padding: 100px 8%;
 
     display: flex;
     align-items: center;
 
-    gap: 15px;
-
-    text-align: left;
-
-    transition: .3s;
+    background: #f8e9e5;
 }
 
-.pack-card:hover {
-    transform: translateY(-7px);
-
-    background: #ffeaf3;
-
-    box-shadow:
-        0 15px 30px rgba(80,30,50,.08);
+.about h2 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: -2px;
+    margin-bottom: 25px;
 }
 
-.pack-art {
-    width: 65px;
-    height: 65px;
-
-    flex-shrink: 0;
-
-    display: grid;
-    place-items: center;
-
-    font-size: 34px;
-
-    background: white;
-
-    border-radius: 22px;
-
-    box-shadow:
-        0 6px 0 #ecd4df;
-}
-
-.pack-card small {
-    color: #d94f87;
-    font-weight: 800;
-}
-
-.pack-card h3 {
-    font-size: 16px;
-}
-
-.pack-card > span {
-    margin-left: auto;
-    font-size: 22px;
+.about p:last-child {
+    max-width: 520px;
+    color: #806d6d;
+    line-height: 1.8;
 }
 
 
-/* =========================================
-   SURPRISE
-========================================= */
-
-.surprise-section {
-    padding: 80px 8%;
-}
-
-.surprise-card {
-    padding: 50px;
-
-    border-radius: 35px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe4ef,
-            #f5eaff
-        );
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 40px;
-}
-
-.surprise-text {
-    max-width: 600px;
-}
-
-.surprise-text > span {
-    color: #d94f87;
-    font-weight: 800;
-}
-
-.surprise-text h2 {
-    font-size: clamp(32px,4vw,52px);
-    line-height: 1.1;
-    margin: 10px 0 15px;
-}
-
-.surprise-text em {
-    color: #d94f87;
-    font-style: normal;
-}
-
-.surprise-cat {
-    min-width: 230px;
-    min-height: 230px;
-
-    display: grid;
-    place-items: center;
-
-    background: white;
-
-    border-radius: 40px;
-
-    font-size: 95px;
-
-    box-shadow:
-        0 20px 40px rgba(70,30,50,.1);
-
-    transition: .35s;
-}
-
-
-/* =========================================
-   FAVORITES
-========================================= */
-
-.favorites {
-    background: white;
-}
-
-.empty-favorites {
-    grid-column: 1 / -1;
-
-    text-align: center;
-
-    padding: 65px 20px;
-
-    border: 2px dashed #edc9da;
-
-    border-radius: 28px;
-
-    background: #fffafd;
-}
-
-.empty-favorites > div {
-    font-size: 55px;
-}
-
-.empty-favorites h3 {
-    margin: 8px 0;
-}
-
-
-/* =========================================
-   SEARCH PANEL
-========================================= */
-
-.search-panel {
-    position: fixed;
-    inset: 0;
-
-    z-index: 4000;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    visibility: hidden;
-    opacity: 0;
-
-    transition: .3s;
-}
-
-.search-panel.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.search-backdrop {
-    position: absolute;
-    inset: 0;
-
-    background: rgba(45,25,35,.5);
-
-    backdrop-filter: blur(7px);
-}
-
-.search-window {
-    position: relative;
-    z-index: 2;
-
-    width: min(520px,100%);
-
-    padding: 40px;
-
-    border-radius: 30px;
-
-    background: white;
-
-    box-shadow:
-        0 25px 70px rgba(0,0,0,.2);
-}
-
-.search-window > span {
-    font-size: 30px;
-}
-
-.search-window h2 {
-    margin-top: 10px;
-    font-size: 30px;
-}
-
-.search-window p {
-    color: #765b68;
-    margin-bottom: 20px;
-}
-
-.search-window input {
-    width: 100%;
-
-    border: 2px solid #f0d3df;
-
-    outline: none;
-
-    padding: 15px 17px;
-
-    border-radius: 15px;
-
-    background: #fff9fc;
-}
-
-.search-window input:focus {
-    border-color: #df82a7;
-}
-
-.search-close {
-    position: absolute;
-
-    right: 18px;
-    top: 18px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #ffe5f0;
-}
-
-
-/* =========================================
-   STICKER MODAL
-========================================= */
-
-.sticker-modal {
-    position: fixed;
-    inset: 0;
-
-    z-index: 5000;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    visibility: hidden;
-    opacity: 0;
-
-    transition: .3s;
-}
-
-.sticker-modal.show {
-    visibility: visible;
-    opacity: 1;
-}
-
-.modal-backdrop {
-    position: absolute;
-    inset: 0;
-
-    background: rgba(40,20,30,.55);
-
-    backdrop-filter: blur(7px);
-}
-
-.modal-window {
-    position: relative;
-    z-index: 2;
-
-    width: min(470px,100%);
-
-    padding: 35px;
-
-    border-radius: 32px;
-
-    background: white;
-
-    text-align: center;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.22);
-}
-
-.modal-x {
-    position: absolute;
-
-    right: 17px;
-    top: 15px;
-
-    width: 40px;
-    height: 40px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #ffe5f0;
-}
-
-.modal-sticker {
-    width: 200px;
-    height: 200px;
-
-    margin: 5px auto 20px;
-
-    display: grid;
-    place-items: center;
-
-    font-size: 110px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff5fa,
-            #ffe4ef
-        );
-
-    border-radius: 45% 55% 52% 48%;
-
-    border: 10px solid white;
-
-    box-shadow:
-        0 12px 0 #ead1dd,
-        0 20px 35px rgba(70,30,50,.14);
-
-    animation:
-        cuteStickerFloat
-        3s
-        ease-in-out
-        infinite;
-}
-
-#modalCategory {
-    color: #d94f87;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    text-transform: uppercase;
-}
-
-.modal-window h2 {
-    font-size: 30px;
-    margin: 5px 0;
-}
-
-.modal-window p {
-    color: #765b68;
-}
-
-.modal-actions {
-    margin-top: 22px;
-
-    display: flex;
-    justify-content: center;
-
-    gap: 10px;
-
-    flex-wrap: wrap;
-}
-
-.modal-actions button {
-    border: none;
-
-    padding: 12px 18px;
-
-    border-radius: 14px;
-
-    font-weight: 800;
-
-    background: #ffe5f0;
-
-    color: #c74378;
-}
-
-.modal-actions button:hover {
-    transform: translateY(-2px);
-}
-
-
-/* =========================================
+/* =========================
    FOOTER
-========================================= */
+   ========================= */
 
-.footer {
-    padding: 45px 20px;
-
+footer {
+    padding: 28px;
     text-align: center;
 
-    background: #34212b;
+    background: #4b3a3a;
+    color: #fff7f4;
 
-    color: #ffeaf3;
-}
-
-.footer-brand {
-    color: #ff9fc5;
-
-    font-size: 20px;
-
-    font-weight: 900;
-
-    margin-bottom: 8px;
+    font-size: 0.85rem;
 }
 
 
-/* =========================================
-   TOAST
-========================================= */
-
-.purrfect-toast {
-    position: fixed;
-
-    left: 50%;
-    bottom: 25px;
-
-    transform:
-        translate(-50%,100px);
-
-    opacity: 0;
-
-    z-index: 9999;
-
-    padding: 13px 20px;
-
-    border-radius: 15px;
-
-    background: #392631;
-
-    color: white;
-
-    font-weight: 800;
-
-    transition: .3s;
-}
-
-.purrfect-toast.show {
-    transform:
-        translate(-50%,0);
-
-    opacity: 1;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1050px) {
-
-    .sticker-grid,
-    .favorite-grid {
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-    .pack-grid {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .mood-list {
-        grid-template-columns:
-            repeat(3,1fr);
-    }
-
-    .hero {
-        padding-left: 6%;
-        padding-right: 6%;
-    }
-}
-
-
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+   ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
 
     .navbar {
-        padding: 15px 5%;
+        padding: 18px 5%;
     }
 
-    .nav-links {
-        display: none;
+    .navbar nav {
+        gap: 15px;
     }
 
-    .menu-toggle {
-        display: block;
-    }
-
-    .search-icon {
-        margin-left: auto;
-        margin-right: 8px;
+    .navbar a {
+        font-size: 0.8rem;
     }
 
     .hero {
         min-height: auto;
+        padding: 60px 7% 80px;
 
-        padding: 65px 6%;
-
-        flex-direction: column;
-
+        grid-template-columns: 1fr;
         text-align: center;
     }
 
-    .hero-content > p {
+    .hero-text {
+        margin: auto;
+    }
+
+    .hero-description {
         margin-left: auto;
         margin-right: auto;
     }
 
-    .hero-actions {
-        justify-content: center;
-    }
-
-    .hero-art {
-        width: 300px;
-        height: 300px;
+    .hero-sticker {
         margin-top: 20px;
     }
 
-    .hero-cat {
-        width: 200px;
-        height: 200px;
-        font-size: 100px;
+    .sticker-paper {
+        width: min(340px, 82vw);
     }
 
-    .floating-sticker {
-        width: 58px;
-        height: 58px;
-        font-size: 28px;
+    .sticker-grid {
+        columns: 2 150px;
+        column-gap: 15px;
     }
 
-    .section-space,
-    .stickers,
-    .surprise-section {
-        padding-left: 6%;
-        padding-right: 6%;
+    .sticker-card {
+        padding: 15px;
+        border-width: 6px;
+        border-radius: 22px;
+        margin-bottom: 15px;
     }
 
-    .mood-list {
-        grid-template-columns:
-            repeat(2,1fr);
-    }
-
-    .collection-top {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
-    .sticker-grid,
-    .favorite-grid {
-        grid-template-columns: repeat(2,1fr);
-        gap: 14px;
-    }
-
-    .sticker-visual {
-        height: 205px;
-    }
-
-    .sticker-art {
-        width: 120px;
-        height: 120px;
-        font-size: 65px;
-    }
-
-    .sticker-details {
-        padding: 14px;
-    }
-
-    .sticker-details h3 {
-        font-size: 16px;
-    }
-
-    .view-sticker {
-        font-size: 12px;
-    }
-
-    .card-heart {
-        width: 38px;
-        height: 38px;
-    }
-
-    .pack-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .surprise-card {
-        padding: 30px 22px;
-
-        flex-direction: column;
-
-        text-align: center;
-    }
-
-    .surprise-cat {
-        min-width: 180px;
-        min-height: 180px;
-    }
-
-    .modal-window {
-        padding: 28px 20px;
-    }
-
-    .modal-sticker {
-        width: 165px;
-        height: 165px;
-        font-size: 90px;
+    .about {
+        min-height: 50vh;
+        padding: 80px 8%;
     }
 }
 
 
-/* =========================================
+/* =========================
    SMALL PHONES
-========================================= */
+   ========================= */
 
-@media (max-width: 430px) {
+@media (max-width: 480px) {
 
-    .brand {
-        font-size: 18px;
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero {
+        padding-top: 45px;
     }
 
     .hero h1 {
-        font-size: 40px;
+        font-size: 3rem;
     }
 
-    .sticker-grid,
-    .favorite-grid {
-        grid-template-columns: 1fr;
+    .sticker-grid {
+        columns: 2 130px;
     }
 
-    .sticker-visual {
-        height: 230px;
+    .sticker-card h3 {
+        font-size: 0.95rem;
     }
 
-    .sticker-art {
-        width: 145px;
-        height: 145px;
-        font-size: 75px;
-    }
-
-    .hero-art {
-        transform: scale(.9);
-    }
-
-    .search-window {
-        padding: 30px 22px;
+    .sticker-card p {
+        font-size: 0.75rem;
     }
 }
-
